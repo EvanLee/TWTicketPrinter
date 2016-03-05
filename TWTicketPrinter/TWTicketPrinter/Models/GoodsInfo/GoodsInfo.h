@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "JSONModel.h"
 
 /**
  *  商品的基本信息
  */
 
-@interface GoodsInfo : NSObject
+@interface GoodsInfo : JSONModel
 
-@property (nonatomic, copy) NSString *goodName;      //商品名称
+@property (nonatomic, copy) NSString *goodsName;      //商品名称
 @property (nonatomic, copy) NSString *barCode;      //条形码
 @property (nonatomic, copy) NSString *unitsName;    //单位名称
 

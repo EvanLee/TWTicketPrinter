@@ -10,7 +10,6 @@
 
 @interface GoodsPrinter : NSObject
 
-
 - (void)printList:(NSString *)list;
 
 @end
