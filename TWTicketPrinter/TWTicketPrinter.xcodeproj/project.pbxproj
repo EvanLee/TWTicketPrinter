@@ -14,6 +14,17 @@
 		20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE49B1C8A7B20009BEA75 /* AppDelegate.m */; };
 		20DDE4A41C8A7B20009BEA75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE49C1C8A7B20009BEA75 /* main.m */; };
 		20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4A21C8A7B20009BEA75 /* ViewController.m */; };
+		20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4B11C8A8562009BEA75 /* GoodsInfo.m */; };
+		20DDE4B51C8A8992009BEA75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DDE4B41C8A8992009BEA75 /* CoreGraphics.framework */; };
+		20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */; };
+		20DDE4C31C8A8F0F009BEA75 /* GoodsPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */; };
+		20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C91C8A903A009BEA75 /* SaleFactory.m */; };
+		20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */; };
+		20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
+		20DDE4CF1C8AACCB009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
+		20DDE4D31C8AC1BE009BEA75 /* TicketOutputor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */; };
+		20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */; };
+		20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */; };
 		9935F658657F01DED80A13E0 /* libPods-TWTicketPrinterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C62D5FC25DE29D1B10AF02 /* libPods-TWTicketPrinterTests.a */; };
 		BE8FBF9F22DB5C0D309836A8 /* libPods-TWTicketPrinter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0703FD3084CA31B04430046B /* libPods-TWTicketPrinter.a */; };
 /* End PBXBuildFile section */
@@ -43,6 +54,24 @@
 		20DDE49C1C8A7B20009BEA75 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		20DDE4A11C8A7B20009BEA75 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		20DDE4A21C8A7B20009BEA75 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		20DDE4A91C8A8318009BEA75 /* CodeInput.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CodeInput.json; sourceTree = "<group>"; };
+		20DDE4B01C8A8562009BEA75 /* GoodsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsInfo.h; sourceTree = "<group>"; };
+		20DDE4B11C8A8562009BEA75 /* GoodsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfo.m; sourceTree = "<group>"; };
+		20DDE4B41C8A8992009BEA75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		20DDE4BD1C8A8CC4009BEA75 /* GoodsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsItem.h; sourceTree = "<group>"; };
+		20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsItem.m; sourceTree = "<group>"; };
+		20DDE4C11C8A8F0F009BEA75 /* GoodsPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPrinter.h; sourceTree = "<group>"; };
+		20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPrinter.m; sourceTree = "<group>"; };
+		20DDE4C61C8A8FDE009BEA75 /* ISaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISaleStrategy.h; sourceTree = "<group>"; };
+		20DDE4C81C8A903A009BEA75 /* SaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleFactory.h; sourceTree = "<group>"; };
+		20DDE4C91C8A903A009BEA75 /* SaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactory.m; sourceTree = "<group>"; };
+		20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsItemParserSpec.m; sourceTree = "<group>"; };
+		20DDE4D11C8AC1BE009BEA75 /* TicketOutputor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketOutputor.h; sourceTree = "<group>"; };
+		20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketOutputor.m; sourceTree = "<group>"; };
+		20DDE4D61C8AC82F009BEA75 /* SalesRebate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesRebate.h; sourceTree = "<group>"; };
+		20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesRebate.m; sourceTree = "<group>"; };
+		20DDE4D91C8AC843009BEA75 /* SalesFeeGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesFeeGoods.h; sourceTree = "<group>"; };
+		20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesFeeGoods.m; sourceTree = "<group>"; };
 		6A423BAB31582BCAF795EDCA /* Pods-TWTicketPrinter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWTicketPrinter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWTicketPrinter/Pods-TWTicketPrinter.debug.xcconfig"; sourceTree = "<group>"; };
 		9E9FBE8A45E440CE2C4A28C9 /* Pods-TWTicketPrinterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWTicketPrinterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWTicketPrinterTests/Pods-TWTicketPrinterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0C62D5FC25DE29D1B10AF02 /* libPods-TWTicketPrinterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWTicketPrinterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE4B51C8A8992009BEA75 /* CoreGraphics.framework in Frameworks */,
 				BE8FBF9F22DB5C0D309836A8 /* libPods-TWTicketPrinter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +125,7 @@
 			children = (
 				20DDE4991C8A7B20009BEA75 /* Applications */,
 				20DDE49D1C8A7B20009BEA75 /* Configs */,
+				20DDE4AE1C8A8562009BEA75 /* Models */,
 				20DDE49E1C8A7B20009BEA75 /* Moudles */,
 				20DDE49F1C8A7B20009BEA75 /* Resources */,
 				20DDE4A01C8A7B20009BEA75 /* ViewControllers */,
@@ -105,6 +136,7 @@
 		20DDE48D1C8A7A6B009BEA75 /* TWTicketPrinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4CB1C8A9E96009BEA75 /* GoodsParser */,
 				20DDE48E1C8A7A6B009BEA75 /* TWTicketPrinterTests.m */,
 				20DDE4901C8A7A6B009BEA75 /* Info.plist */,
 			);
@@ -124,6 +156,7 @@
 		20DDE49D1C8A7B20009BEA75 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4A91C8A8318009BEA75 /* CodeInput.json */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -131,6 +164,10 @@
 		20DDE49E1C8A7B20009BEA75 /* Moudles */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4D01C8AC198009BEA75 /* Output */,
+				20DDE4C71C8A902B009BEA75 /* SaleFactory */,
+				20DDE4C41C8A8F54009BEA75 /* SaleStrategise */,
+				20DDE4C01C8A8EDF009BEA75 /* Main */,
 			);
 			path = Moudles;
 			sourceTree = "<group>";
@@ -155,9 +192,100 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		20DDE4AE1C8A8562009BEA75 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4BC1C8A8C79009BEA75 /* GoodsItem */,
+				20DDE4AF1C8A8562009BEA75 /* GoodsInfo */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20DDE4AF1C8A8562009BEA75 /* GoodsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4B01C8A8562009BEA75 /* GoodsInfo.h */,
+				20DDE4B11C8A8562009BEA75 /* GoodsInfo.m */,
+			);
+			path = GoodsInfo;
+			sourceTree = "<group>";
+		};
+		20DDE4BC1C8A8C79009BEA75 /* GoodsItem */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4BD1C8A8CC4009BEA75 /* GoodsItem.h */,
+				20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */,
+			);
+			path = GoodsItem;
+			sourceTree = "<group>";
+		};
+		20DDE4C01C8A8EDF009BEA75 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4C11C8A8F0F009BEA75 /* GoodsPrinter.h */,
+				20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		20DDE4C41C8A8F54009BEA75 /* SaleStrategise */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D51C8AC7DC009BEA75 /* SalesRebate */,
+				20DDE4D41C8AC7A5009BEA75 /* SalesFeeGoods */,
+				20DDE4C61C8A8FDE009BEA75 /* ISaleStrategy.h */,
+			);
+			path = SaleStrategise;
+			sourceTree = "<group>";
+		};
+		20DDE4C71C8A902B009BEA75 /* SaleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4C81C8A903A009BEA75 /* SaleFactory.h */,
+				20DDE4C91C8A903A009BEA75 /* SaleFactory.m */,
+			);
+			path = SaleFactory;
+			sourceTree = "<group>";
+		};
+		20DDE4CB1C8A9E96009BEA75 /* GoodsParser */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */,
+			);
+			path = GoodsParser;
+			sourceTree = "<group>";
+		};
+		20DDE4D01C8AC198009BEA75 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D11C8AC1BE009BEA75 /* TicketOutputor.h */,
+				20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		20DDE4D41C8AC7A5009BEA75 /* SalesFeeGoods */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D91C8AC843009BEA75 /* SalesFeeGoods.h */,
+				20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */,
+			);
+			path = SalesFeeGoods;
+			sourceTree = "<group>";
+		};
+		20DDE4D51C8AC7DC009BEA75 /* SalesRebate */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D61C8AC82F009BEA75 /* SalesRebate.h */,
+				20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */,
+			);
+			path = SalesRebate;
+			sourceTree = "<group>";
+		};
 		671C1286493E137A2DFA6AB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4B41C8A8992009BEA75 /* CoreGraphics.framework */,
 				0703FD3084CA31B04430046B /* libPods-TWTicketPrinter.a */,
 				A0C62D5FC25DE29D1B10AF02 /* libPods-TWTicketPrinterTests.a */,
 			);
@@ -262,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20DDE4841C8A7A6B009BEA75 /* LaunchScreen.storyboard in Resources */,
+				20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */,
 				20DDE4811C8A7A6B009BEA75 /* Assets.xcassets in Resources */,
 				20DDE47F1C8A7A6A009BEA75 /* Main.storyboard in Resources */,
 			);
@@ -271,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE4CF1C8AACCB009BEA75 /* CodeInput.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,9 +504,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */,
+				20DDE4C31C8A8F0F009BEA75 /* GoodsPrinter.m in Sources */,
 				20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */,
 				20DDE4A41C8A7B20009BEA75 /* main.m in Sources */,
+				20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */,
+				20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */,
+				20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */,
 				20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */,
+				20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */,
+				20DDE4D31C8AC1BE009BEA75 /* TicketOutputor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */,
 				20DDE48F1C8A7A6B009BEA75 /* TWTicketPrinterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +643,7 @@
 			baseConfigurationReference = 6A423BAB31582BCAF795EDCA /* Pods-TWTicketPrinter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = TWTicketPrinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grasp.TWTicketPrinter;
@@ -517,6 +656,7 @@
 			baseConfigurationReference = BF5E554ED86022C91D9C9A58 /* Pods-TWTicketPrinter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = TWTicketPrinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grasp.TWTicketPrinter;
