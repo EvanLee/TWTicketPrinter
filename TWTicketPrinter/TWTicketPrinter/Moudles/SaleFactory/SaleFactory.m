@@ -8,6 +8,14 @@
 
 #import "SaleFactory.h"
 
+@interface SaleFactory ()
+
+@end
+
 @implementation SaleFactory
+
+- (id<ISaleStrategy>)calculatorForGoods:(GoodsItem *)item {
+    return nil;
+}
 
 @end

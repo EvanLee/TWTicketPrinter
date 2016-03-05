@@ -10,4 +10,7 @@
 
 @protocol ISaleStrategy <NSObject>
 
+@required
+- (void)calcResultsForData:(id)data;
+
 @end

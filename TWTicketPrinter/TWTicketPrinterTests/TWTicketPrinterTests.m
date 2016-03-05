@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ELCocoaExts.h"
 
 @interface TWTicketPrinterTests : XCTestCase
 
@@ -25,8 +26,18 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSString *readFile = [self parseJosnString:nil];
+    
+    XCTAssert(![NSString isNullOrEmpty:readFile]);
+}
+
+- (NSString *)parseJosnString:(NSString *)jsonString {
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"CodeInput" ofType:@".json"];
+    
+    
+    return [NSString stringWithContentsOfFile:jsonPath
+                                     encoding:NSUTF8StringEncoding
+                                        error:nil];
 }
 
 - (void)testPerformanceExample {

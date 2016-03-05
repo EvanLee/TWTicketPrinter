@@ -1,16 +1,17 @@
 //
-//  GoodsPrinter.h
+//  SalesFeeGoods.m
 //  TWTicketPrinter
 //
 //  Created by Evan on 16/3/5.
 //  Copyright © 2016年 ChangHong. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SalesFeeGoods.h"
 
-@interface GoodsPrinter : NSObject
+@implementation SalesFeeGoods
 
+- (void)calcResultsForData:(id)data {
 
-- (void)printList:(NSString *)list;
+}
 
 @end

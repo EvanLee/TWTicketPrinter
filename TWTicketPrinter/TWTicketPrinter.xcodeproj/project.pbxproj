@@ -19,6 +19,12 @@
 		20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */; };
 		20DDE4C31C8A8F0F009BEA75 /* GoodsPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */; };
 		20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C91C8A903A009BEA75 /* SaleFactory.m */; };
+		20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */; };
+		20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
+		20DDE4CF1C8AACCB009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
+		20DDE4D31C8AC1BE009BEA75 /* TicketOutputor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */; };
+		20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */; };
+		20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */; };
 		9935F658657F01DED80A13E0 /* libPods-TWTicketPrinterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C62D5FC25DE29D1B10AF02 /* libPods-TWTicketPrinterTests.a */; };
 		BE8FBF9F22DB5C0D309836A8 /* libPods-TWTicketPrinter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0703FD3084CA31B04430046B /* libPods-TWTicketPrinter.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +65,13 @@
 		20DDE4C61C8A8FDE009BEA75 /* ISaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISaleStrategy.h; sourceTree = "<group>"; };
 		20DDE4C81C8A903A009BEA75 /* SaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleFactory.h; sourceTree = "<group>"; };
 		20DDE4C91C8A903A009BEA75 /* SaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactory.m; sourceTree = "<group>"; };
+		20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsItemParserSpec.m; sourceTree = "<group>"; };
+		20DDE4D11C8AC1BE009BEA75 /* TicketOutputor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketOutputor.h; sourceTree = "<group>"; };
+		20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketOutputor.m; sourceTree = "<group>"; };
+		20DDE4D61C8AC82F009BEA75 /* SalesRebate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesRebate.h; sourceTree = "<group>"; };
+		20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesRebate.m; sourceTree = "<group>"; };
+		20DDE4D91C8AC843009BEA75 /* SalesFeeGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesFeeGoods.h; sourceTree = "<group>"; };
+		20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesFeeGoods.m; sourceTree = "<group>"; };
 		6A423BAB31582BCAF795EDCA /* Pods-TWTicketPrinter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWTicketPrinter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWTicketPrinter/Pods-TWTicketPrinter.debug.xcconfig"; sourceTree = "<group>"; };
 		9E9FBE8A45E440CE2C4A28C9 /* Pods-TWTicketPrinterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWTicketPrinterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWTicketPrinterTests/Pods-TWTicketPrinterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0C62D5FC25DE29D1B10AF02 /* libPods-TWTicketPrinterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWTicketPrinterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +136,7 @@
 		20DDE48D1C8A7A6B009BEA75 /* TWTicketPrinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4CB1C8A9E96009BEA75 /* GoodsParser */,
 				20DDE48E1C8A7A6B009BEA75 /* TWTicketPrinterTests.m */,
 				20DDE4901C8A7A6B009BEA75 /* Info.plist */,
 			);
@@ -150,6 +164,7 @@
 		20DDE49E1C8A7B20009BEA75 /* Moudles */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4D01C8AC198009BEA75 /* Output */,
 				20DDE4C71C8A902B009BEA75 /* SaleFactory */,
 				20DDE4C41C8A8F54009BEA75 /* SaleStrategise */,
 				20DDE4C01C8A8EDF009BEA75 /* Main */,
@@ -216,6 +231,8 @@
 		20DDE4C41C8A8F54009BEA75 /* SaleStrategise */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4D51C8AC7DC009BEA75 /* SalesRebate */,
+				20DDE4D41C8AC7A5009BEA75 /* SalesFeeGoods */,
 				20DDE4C61C8A8FDE009BEA75 /* ISaleStrategy.h */,
 			);
 			path = SaleStrategise;
@@ -228,6 +245,41 @@
 				20DDE4C91C8A903A009BEA75 /* SaleFactory.m */,
 			);
 			path = SaleFactory;
+			sourceTree = "<group>";
+		};
+		20DDE4CB1C8A9E96009BEA75 /* GoodsParser */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */,
+			);
+			path = GoodsParser;
+			sourceTree = "<group>";
+		};
+		20DDE4D01C8AC198009BEA75 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D11C8AC1BE009BEA75 /* TicketOutputor.h */,
+				20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		20DDE4D41C8AC7A5009BEA75 /* SalesFeeGoods */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D91C8AC843009BEA75 /* SalesFeeGoods.h */,
+				20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */,
+			);
+			path = SalesFeeGoods;
+			sourceTree = "<group>";
+		};
+		20DDE4D51C8AC7DC009BEA75 /* SalesRebate */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE4D61C8AC82F009BEA75 /* SalesRebate.h */,
+				20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */,
+			);
+			path = SalesRebate;
 			sourceTree = "<group>";
 		};
 		671C1286493E137A2DFA6AB9 /* Frameworks */ = {
@@ -338,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20DDE4841C8A7A6B009BEA75 /* LaunchScreen.storyboard in Resources */,
+				20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */,
 				20DDE4811C8A7A6B009BEA75 /* Assets.xcassets in Resources */,
 				20DDE47F1C8A7A6A009BEA75 /* Main.storyboard in Resources */,
 			);
@@ -347,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE4CF1C8AACCB009BEA75 /* CodeInput.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,8 +509,11 @@
 				20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */,
 				20DDE4A41C8A7B20009BEA75 /* main.m in Sources */,
 				20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */,
+				20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */,
 				20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */,
 				20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */,
+				20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */,
+				20DDE4D31C8AC1BE009BEA75 /* TicketOutputor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */,
 				20DDE48F1C8A7A6B009BEA75 /* TWTicketPrinterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

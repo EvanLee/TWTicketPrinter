@@ -1,5 +1,5 @@
 //
-//  SaleFactory.h
+//  SalesFeeGoods.h
 //  TWTicketPrinter
 //
 //  Created by Evan on 16/3/5.
@@ -9,14 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ISaleStrategy.h"
 
-@class GoodsItem;
-
-/**
- *  SaleFactory 负责算法策略的创建
- */
-
-@interface SaleFactory : NSObject
-
-- (id<ISaleStrategy>)calculatorForGoods:(GoodsItem *)item;
+@interface SalesFeeGoods : NSObject <ISaleStrategy>
 
 @end
