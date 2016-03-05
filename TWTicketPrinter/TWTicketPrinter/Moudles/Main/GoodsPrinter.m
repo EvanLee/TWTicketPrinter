@@ -13,6 +13,7 @@
 #import "GoodsInfo.h"
 #import "TicketOutputor.h"
 #import "GoodsItem.h"
+#import "BarCodeParser.h"
 
 NSDictionary *goodsInfoMap;
 
@@ -24,8 +25,9 @@ NSDictionary *goodsInfoMap;
 @property (nonatomic, assign) CGFloat saveTotal;
 
 @property (nonatomic, strong) id<ISaleStrategy> saleCalculator;
+@property (nonatomic, strong) id<IDataParser>   inputParser;
 
-@property (nonatomic, strong) SaleFactory    *factory;
+@property (nonatomic, strong) SaleFactory    *salefactory;
 @property (nonatomic, strong) TicketOutputor *outputor;
 
 @property (nonatomic, strong) NSArray *goodsItemList;
@@ -46,6 +48,9 @@ NSDictionary *goodsInfoMap;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         printer = [GoodsPrinter new];
+        printer.inputParser = [BarCodeParser new];
+        printer.salefactory = [SaleFactory new];
+        printer.outputor    = [TicketOutputor new];
     });
     
     return printer;
@@ -54,8 +59,9 @@ NSDictionary *goodsInfoMap;
 #pragma mark - Public Methods
 
 - (void)printList:(NSString *)jsonString {
-    //解析 (需要重构)
-    [self parseJosnString:jsonString];
+    //解析
+    [self.inputParser parse:jsonString error:nil];
+    self.goodsItemList = [self.inputParser getResults];
     
     //处理，计算
     [self processList];
@@ -72,7 +78,7 @@ NSDictionary *goodsInfoMap;
 }
 
 - (void)processForItem:(GoodsItem *)item {
-    id<ISaleStrategy> calculator = [self.factory calculatorForGoods:item];
+    id<ISaleStrategy> calculator = [self.salefactory calculatorForGoods:item];
     [calculator calcResultsForData:item];
     
     self.total     += 0;
@@ -82,25 +88,6 @@ NSDictionary *goodsInfoMap;
 }
 
 #pragma mark - Private Methods
-
-- (NSString *)readJsonFromCache:(NSString *)fileName {
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@".json"];
-    
-    return [NSString stringWithContentsOfFile:jsonPath
-                                     encoding:NSUTF8StringEncoding
-                                        error:nil];
-}
-
-- (void)parseJsonForFile:(NSString *)fileName {
-    NSString * string = [self readJsonFromCache:fileName];
-    [self parseJosnString:string];
-}
-
-- (NSArray *)parseJosnString:(NSString *)jsonString {
-    //return [self.parser parser]
-#warning Not implement
-    return nil;
-}
 
 
 @end

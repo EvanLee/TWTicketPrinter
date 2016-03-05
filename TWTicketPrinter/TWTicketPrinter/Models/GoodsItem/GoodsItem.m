@@ -10,7 +10,8 @@
 #import "GoodsInfo.h"
 
 @interface GoodsItem ()
-@property (nonatomic, strong) GoodsInfo *info;
+@property (nonatomic, strong) GoodsInfo  *info;
+@property (nonatomic, assign) NSUInteger count;
 @end
 
 @implementation GoodsItem
@@ -23,6 +24,16 @@
         self.info = goods;
     }
     return self;
+}
+
+#pragma mark - Public Methods
+
+- (void)addOne {
+    _count++;
+}
+
+- (void)addWithCount:(NSUInteger)count {
+    _count += count;
 }
 
 @end

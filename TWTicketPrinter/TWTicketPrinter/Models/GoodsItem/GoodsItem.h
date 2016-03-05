@@ -13,10 +13,15 @@
 
 @interface GoodsItem : NSObject
 
-@property (nonatomic, assign) CGFloat count;
+@property (nonatomic, assign, readonly) NSUInteger count;
+
 @property (nonatomic, assign) CGFloat totalPrice;
 @property (nonatomic, assign) CGFloat savePrice;
 
 - (instancetype)initWithGoodsInfo:(GoodsInfo *)goods;
+
+//叠加商品个数
+- (void)addOne;
+- (void)addWithCount:(NSUInteger)count;
 
 @end

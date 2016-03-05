@@ -7,7 +7,12 @@
 //
 
 #import "GoodsInfo.h"
+#import "JSONKeyMapper+MapExtentsion.h"
 
 @implementation GoodsInfo
+
++ (JSONKeyMapper *)keyMapper {
+    return [JSONKeyMapper mapperFromBigCamelCaseToLittleCamelCase];
+}
 
 @end

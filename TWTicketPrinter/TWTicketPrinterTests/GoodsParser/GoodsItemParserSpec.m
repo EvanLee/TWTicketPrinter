@@ -17,13 +17,12 @@ describe(@"Parser List", ^{
     context(@"Give a Json", ^{
         
         it(@"Should be parsed to GoodList", ^{
-            NSString *fileName = @"fileName";
+            NSString *fileName = @"CodeInput";
             NSError *err = nil;
             BarCodeParser * parser = [BarCodeParser new];
             [parser parse:fileName error:&err];
             
             [[theValue(err) should] beNil];
-    
             NSArray<__kindof GoodsItem *> *list = [parser getResults];
         
             [[theValue(list.count) should] equal:@(3)];
