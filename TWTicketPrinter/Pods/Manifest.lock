@@ -1,0 +1,45 @@
+PODS:
+  - ELCocoaExts (0.0.6):
+    - ELCocoaExts/DateExts (= 0.0.6)
+    - ELCocoaExts/DictExts (= 0.0.6)
+    - ELCocoaExts/ErrorExts (= 0.0.6)
+    - ELCocoaExts/GlobalExts (= 0.0.6)
+    - ELCocoaExts/StringExts (= 0.0.6)
+    - ELCocoaExts/ViewControllerExts (= 0.0.6)
+    - ELCocoaExts/ViewExts (= 0.0.6)
+  - ELCocoaExts/DateExts (0.0.6)
+  - ELCocoaExts/DictExts (0.0.6)
+  - ELCocoaExts/ErrorExts (0.0.6)
+  - ELCocoaExts/GlobalExts (0.0.6)
+  - ELCocoaExts/StringExts (0.0.6)
+  - ELCocoaExts/ViewControllerExts (0.0.6)
+  - ELCocoaExts/ViewExts (0.0.6)
+  - Kiwi (2.4.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - ELCocoaExts (from `https://github.com/EvanLee/ELCocoaExts.git`)
+  - Kiwi (~> 2.4)
+  - ReactiveCocoa (~> 2.3)
+
+EXTERNAL SOURCES:
+  ELCocoaExts:
+    :git: https://github.com/EvanLee/ELCocoaExts.git
+
+CHECKOUT OPTIONS:
+  ELCocoaExts:
+    :commit: d63b53ded03037721d0665fee8d51e5bd67919a5
+    :git: https://github.com/EvanLee/ELCocoaExts.git
+
+SPEC CHECKSUMS:
+  ELCocoaExts: c364841c1d492ac7f35628095913368b42f56f28
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+
+COCOAPODS: 0.39.0

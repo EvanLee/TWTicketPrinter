@@ -1,0 +1,80 @@
+{
+  "name": "ELCocoaExts",
+  "version": "0.0.6",
+  "summary": "Cocoa Category Extensions",
+  "description": "A longer description of ELCocoaExts in Markdown format.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
+  "homepage": "https://github.com/EvanLee/ELCocoaExts",
+  "license": "MIT",
+  "authors": {
+    "EvanLee": "haoer715@gmail.com"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "https://github.com/EvanLee/ELCocoaExts.git",
+    "tag": "0.0.6",
+    "submodules": true
+  },
+  "source_files": "ELCocoaExts/ELCocoaExts.h",
+  "public_header_files": "ELCocoaExts/ELCocoaExts.h",
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "ViewExts",
+      "source_files": "ELCocoaExts/ELViewExts/**/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELViewExts/ELViewExts.h",
+        "ELCocoaExts/ELViewExts/**/*.h"
+      ]
+    },
+    {
+      "name": "ViewControllerExts",
+      "source_files": "ELCocoaExts/ELViewControllerExts/**/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELViewControllerExts/ELViewControllerExts.h",
+        "ELCocoaExts/ELViewControllerExts/**/*.h"
+      ]
+    },
+    {
+      "name": "StringExts",
+      "source_files": "ELCocoaExts/ELStringExts/**/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELStringExts/ELStringExts.h",
+        "ELCocoaExts/ELStringExts/**/*.h"
+      ]
+    },
+    {
+      "name": "DictExts",
+      "source_files": "ELCocoaExts/ELDictExts/**/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELDictExts/ELDictExts.h",
+        "ELCocoaExts/ELDictExts/**/*.h"
+      ]
+    },
+    {
+      "name": "DateExts",
+      "source_files": "ELCocoaExts/ELDateExts/**/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELDateExts/ELDateExts.h",
+        "ELCocoaExts/ELDateExts/**/*.h"
+      ]
+    },
+    {
+      "name": "ErrorExts",
+      "source_files": "ELCocoaExts/ELErrorExts/**/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELErrorExts/ELErrorExts.h",
+        "ELCocoaExts/ELErrorExts/**/*.h"
+      ]
+    },
+    {
+      "name": "GlobalExts",
+      "source_files": "ELCocoaExts/ELGlobalExts/*.{h,m}",
+      "public_header_files": [
+        "ELCocoaExts/ELGlobalExts/ELScopeExts.h",
+        "ELCocoaExts/ELGlobalExts/ELExtsmetamacros.h"
+      ]
+    }
+  ]
+}

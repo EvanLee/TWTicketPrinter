@@ -1,0 +1,23 @@
+
+platform :ios, '8.0'
+inhibit_all_warnings!
+xcodeproj 'TWTicketPrinter.xcodeproj'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+def common_pods
+
+pod 'ReactiveCocoa', '~> 2.3'
+pod 'ELCocoaExts', :git=>"https://github.com/EvanLee/ELCocoaExts.git"
+
+end
+
+
+target 'TWTicketPrinter',  :exclusive => true do
+    common_pods
+end
+
+target 'TWTicketPrinterTests', :exclusive => true do
+    pod 'Kiwi', '~> 2.4'
+    common_pods
+end
