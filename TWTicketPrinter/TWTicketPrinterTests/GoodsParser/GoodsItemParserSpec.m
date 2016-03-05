@@ -14,7 +14,7 @@
 SPEC_BEGIN(GoodsItemParserSpec)
 
 describe(@"Parser List", ^{
-    context(@"Give a Json", ^{
+    context(@"Give a Json File", ^{
         
         it(@"Should be parsed to GoodList", ^{
             NSString *fileName = @"CodeInput";
@@ -22,18 +22,16 @@ describe(@"Parser List", ^{
             BarCodeParser * parser = [BarCodeParser new];
             [parser parse:fileName error:&err];
             
-            [[theValue(err) should] beNil];
+            [[err should] beNil];
+            
             NSArray<__kindof GoodsItem *> *list = [parser getResults];
-        
-            [[theValue(list.count) should] equal:@(3)];
             
-            CGFloat allCount = 0;
-            for (GoodsItem *item in list) {
-                allCount += item.count;
-            }
-            
-            [[theValue(allCount) should] equal:@(5)];
-            
+            [[list shouldNot] beNil];
+            [[theValue(list.count) should] equal:theValue(3)];
+
+            [[theValue(list[0].count) should] equal:theValue(5)];
+            [[theValue(list[1].count) should] equal:theValue(2)];
+            [[theValue(list[2].count) should] equal:theValue(3)];
         });
     });
 });

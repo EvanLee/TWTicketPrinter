@@ -26,9 +26,9 @@
 }
 
 - (void)testExample {
-    NSString *readFile = [self parseJosnString:nil];
-    
-    XCTAssert(![NSString isNullOrEmpty:readFile]);
+//    NSString *readFile = [self parseJosnString:nil];
+//    
+//    XCTAssert(![NSString isNullOrEmpty:readFile]);
 }
 
 - (NSString *)parseJosnString:(NSString *)jsonString {

@@ -11,12 +11,12 @@
 #import "GoodsInfo.h"
 #import "GoodsItem.h"
 
-NSString * const Goods_DS_File = @"goods.datasource.file";
+NSString * const Goods_DS_File = @"Goods.plist";
 
 @interface BarCodeParser ()
 
-@property (nonatomic, strong) NSArray *itemList;
-@property (nonatomic, strong) NSMutableDictionary *goodsMap;  //所有商品的Map
+@property (nonatomic, strong) NSArray      *itemList;
+@property (nonatomic, strong) NSDictionary *goodsMap;  //所有商品的Map
 
 @end
 
@@ -29,15 +29,15 @@ NSString * const Goods_DS_File = @"goods.datasource.file";
     NSCParameterAssert([data isKindOfClass:[NSString class]]);
     self.itemList = nil;
     
-    NSString *string = [self readJsonFromCache:data];
+    NSString *jsonString = [self readJsonFromCache:data];
     
-    if ([NSString isNullOrEmpty:string]) {
-        [self fireErrorWithFailureReson:@"无法读取文件!" error:error];
+    if ([NSString isNullOrEmpty:jsonString]) {
+        [self fireErrorWithFailureReson:@"无法读取Json文件!" error:error];
         return;
     }
     
-    NSArray *list = [self parseJosnString:string error:error];
-    if (error) {
+    NSArray *list = [self parseJosnString:jsonString error:error];
+    if (*error) {
         return;
     }
     
@@ -97,7 +97,7 @@ NSString * const Goods_DS_File = @"goods.datasource.file";
         [buyList addObject:tempBuyMap[obj]];
     }];
     
-    return array;
+    return buyList;
 }
 
 /**
@@ -147,8 +147,10 @@ NSString * const Goods_DS_File = @"goods.datasource.file";
  */
 
 - (NSDictionary *)configureGoodsMap {
+    NSString *path = [[NSBundle mainBundle] pathForResource:Goods_DS_File ofType:nil];
+    
     NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];
-    NSArray *goodsOfAll           = [NSArray arrayWithContentsOfFile:Goods_DS_File];
+    NSArray *goodsOfAll           = [NSArray arrayWithContentsOfFile:path];
     NSError *error                = nil;
     
     for (NSDictionary *dic in goodsOfAll) {
@@ -164,5 +166,13 @@ NSString * const Goods_DS_File = @"goods.datasource.file";
     return tempDict;
 }
 
+#pragma mark - Getters & Setters
+
+- (NSDictionary *)goodsMap {
+    if (!_goodsMap) {
+        _goodsMap = [self configureGoodsMap];
+    }
+    return _goodsMap;
+}
 
 @end
