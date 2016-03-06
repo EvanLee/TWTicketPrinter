@@ -39,7 +39,7 @@ describe(@"StrategyTest", ^{
     });
     
     context(@"Give a SalesFeeGoods", ^{
-        //买三送一
+        //买二送一
         id<ISaleStrategy> ss = [[SalesFeeGoods alloc] initWithNeedsNumber:3 feeNumber:1];
         
         GoodsInfo *info = [GoodsInfo new];
@@ -58,6 +58,7 @@ describe(@"StrategyTest", ^{
     });
     
     context(@"Give a NormalSale", ^{
+        //不打折
         id<ISaleStrategy> ss = [SaleNormal new];
         
         GoodsInfo *info = [GoodsInfo new];

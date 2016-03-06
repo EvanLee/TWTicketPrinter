@@ -12,15 +12,24 @@
 		20061E4C1C8C781B004DFADC /* SalesFeeGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */; };
 		20061E4D1C8C7822004DFADC /* SaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C91C8A903A009BEA75 /* SaleFactory.m */; };
 		20061E4E1C8C7845004DFADC /* TicketPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047332A1C8C644900840998 /* TicketPrinter.m */; };
+		20061E531C8C7845004DFADC /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20061E521C8C7845004DFADC /* HomeViewModel.m */; };
 		204733281C8C63A500840998 /* TicketPrinterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 204733271C8C63A500840998 /* TicketPrinterSpec.m */; };
 		2047332B1C8C644900840998 /* TicketPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047332A1C8C644900840998 /* TicketPrinter.m */; };
 		2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689691C8C196500068621 /* SaleFactorySpec.m */; };
+		20C77B551C8C87B200C8B2C2 /* SaleStrategies_Normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B541C8C87B200C8B2C2 /* SaleStrategies_Normal.plist */; };
+		20C77B571C8C87C800C8B2C2 /* SaleStrategies_Fee.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B561C8C87C800C8B2C2 /* SaleStrategies_Fee.plist */; };
+		20C77B591C8C87E100C8B2C2 /* SaleStrategies_Both.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B581C8C87E100C8B2C2 /* SaleStrategies_Both.plist */; };
+		20C77B5B1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B5A1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist */; };
+		20C77B5C1C8C87F700C8B2C2 /* SaleStrategies_Normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B541C8C87B200C8B2C2 /* SaleStrategies_Normal.plist */; };
+		20C77B5D1C8C87F700C8B2C2 /* SaleStrategies_Fee.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B561C8C87C800C8B2C2 /* SaleStrategies_Fee.plist */; };
+		20C77B5E1C8C87F700C8B2C2 /* SaleStrategies_Both.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B581C8C87E100C8B2C2 /* SaleStrategies_Both.plist */; };
+		20C77B5F1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C77B5A1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist */; };
 		20DDE47F1C8A7A6A009BEA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE47D1C8A7A6A009BEA75 /* Main.storyboard */; };
 		20DDE4811C8A7A6B009BEA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4801C8A7A6B009BEA75 /* Assets.xcassets */; };
 		20DDE4841C8A7A6B009BEA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4821C8A7A6B009BEA75 /* LaunchScreen.storyboard */; };
 		20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE49B1C8A7B20009BEA75 /* AppDelegate.m */; };
 		20DDE4A41C8A7B20009BEA75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE49C1C8A7B20009BEA75 /* main.m */; };
-		20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4A21C8A7B20009BEA75 /* ViewController.m */; };
+		20DDE4A51C8A7B20009BEA75 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4A21C8A7B20009BEA75 /* HomeViewController.m */; };
 		20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4B11C8A8562009BEA75 /* GoodsInfo.m */; };
 		20DDE4B51C8A8992009BEA75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DDE4B41C8A8992009BEA75 /* CoreGraphics.framework */; };
 		20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */; };
@@ -56,11 +65,17 @@
 
 /* Begin PBXFileReference section */
 		0703FD3084CA31B04430046B /* libPods-TWTicketPrinter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWTicketPrinter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20061E511C8C7845004DFADC /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		20061E521C8C7845004DFADC /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		204733271C8C63A500840998 /* TicketPrinterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketPrinterSpec.m; sourceTree = "<group>"; };
 		204733291C8C644900840998 /* TicketPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketPrinter.h; sourceTree = "<group>"; };
 		2047332A1C8C644900840998 /* TicketPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketPrinter.m; sourceTree = "<group>"; };
 		209689691C8C196500068621 /* SaleFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactorySpec.m; sourceTree = "<group>"; };
 		2096897E1C8C4D3000068621 /* IPrintStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPrintStrategy.h; sourceTree = "<group>"; };
+		20C77B541C8C87B200C8B2C2 /* SaleStrategies_Normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SaleStrategies_Normal.plist; sourceTree = "<group>"; };
+		20C77B561C8C87C800C8B2C2 /* SaleStrategies_Fee.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SaleStrategies_Fee.plist; sourceTree = "<group>"; };
+		20C77B581C8C87E100C8B2C2 /* SaleStrategies_Both.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SaleStrategies_Both.plist; sourceTree = "<group>"; };
+		20C77B5A1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SaleStrategies_Rebate.plist; sourceTree = "<group>"; };
 		20DDE4711C8A7A6A009BEA75 /* TWTicketPrinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTicketPrinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DDE47E1C8A7A6A009BEA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20DDE4801C8A7A6B009BEA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -71,8 +86,8 @@
 		20DDE49A1C8A7B20009BEA75 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20DDE49B1C8A7B20009BEA75 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		20DDE49C1C8A7B20009BEA75 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		20DDE4A11C8A7B20009BEA75 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		20DDE4A21C8A7B20009BEA75 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		20DDE4A11C8A7B20009BEA75 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		20DDE4A21C8A7B20009BEA75 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		20DDE4A91C8A8318009BEA75 /* CodeInput.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CodeInput.json; sourceTree = "<group>"; };
 		20DDE4B01C8A8562009BEA75 /* GoodsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsInfo.h; sourceTree = "<group>"; };
 		20DDE4B11C8A8562009BEA75 /* GoodsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfo.m; sourceTree = "<group>"; };
@@ -132,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20061E501C8C7845004DFADC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				20061E511C8C7845004DFADC /* HomeViewModel.h */,
+				20061E521C8C7845004DFADC /* HomeViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		209689681C8C194100068621 /* SaleFactorySepc */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +193,7 @@
 				20DDE4AE1C8A8562009BEA75 /* Models */,
 				20DDE49E1C8A7B20009BEA75 /* Moudles */,
 				20DDE49F1C8A7B20009BEA75 /* Resources */,
+				20061E501C8C7845004DFADC /* ViewModels */,
 				20DDE4A01C8A7B20009BEA75 /* ViewControllers */,
 			);
 			path = TWTicketPrinter;
@@ -203,6 +228,10 @@
 				20DDE4A91C8A8318009BEA75 /* CodeInput.json */,
 				20DDE4E01C8ACCAA009BEA75 /* Goods.plist */,
 				20DDE4EC1C8B2D47009BEA75 /* SaleStrategies.plist */,
+				20C77B541C8C87B200C8B2C2 /* SaleStrategies_Normal.plist */,
+				20C77B561C8C87C800C8B2C2 /* SaleStrategies_Fee.plist */,
+				20C77B581C8C87E100C8B2C2 /* SaleStrategies_Both.plist */,
+				20C77B5A1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -234,8 +263,8 @@
 		20DDE4A01C8A7B20009BEA75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				20DDE4A11C8A7B20009BEA75 /* ViewController.h */,
-				20DDE4A21C8A7B20009BEA75 /* ViewController.m */,
+				20DDE4A11C8A7B20009BEA75 /* HomeViewController.h */,
+				20DDE4A21C8A7B20009BEA75 /* HomeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -494,12 +523,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C77B571C8C87C800C8B2C2 /* SaleStrategies_Fee.plist in Resources */,
 				20DDE4841C8A7A6B009BEA75 /* LaunchScreen.storyboard in Resources */,
 				20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */,
+				20C77B551C8C87B200C8B2C2 /* SaleStrategies_Normal.plist in Resources */,
 				20DDE4811C8A7A6B009BEA75 /* Assets.xcassets in Resources */,
 				20DDE4E11C8ACCAA009BEA75 /* Goods.plist in Resources */,
 				20DDE4ED1C8B2D47009BEA75 /* SaleStrategies.plist in Resources */,
 				20DDE47F1C8A7A6A009BEA75 /* Main.storyboard in Resources */,
+				20C77B5B1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist in Resources */,
+				20C77B591C8C87E100C8B2C2 /* SaleStrategies_Both.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +541,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20DDE4CF1C8AACCB009BEA75 /* CodeInput.json in Resources */,
+				20C77B5C1C8C87F700C8B2C2 /* SaleStrategies_Normal.plist in Resources */,
+				20C77B5D1C8C87F700C8B2C2 /* SaleStrategies_Fee.plist in Resources */,
+				20C77B5E1C8C87F700C8B2C2 /* SaleStrategies_Both.plist in Resources */,
+				20C77B5F1C8C87F700C8B2C2 /* SaleStrategies_Rebate.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,10 +659,11 @@
 				20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */,
 				20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */,
 				20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */,
-				20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */,
+				20DDE4A51C8A7B20009BEA75 /* HomeViewController.m in Sources */,
 				20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */,
 				20DDE4D31C8AC1BE009BEA75 /* OutputBuilder.m in Sources */,
 				20DDE4FF1C8BD65C009BEA75 /* StrategyProxy.m in Sources */,
+				20061E531C8C7845004DFADC /* HomeViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

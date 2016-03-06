@@ -12,12 +12,15 @@
 #import "SaleNormal.h"
 #import "StrategyProxy.h"
 
-NSDictionary *g_strategyCache;    //存放所有的strategy 的缓存 即：NSDictionary<strategyName, strategyInstances>
-NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:NSDictionary<barcode, list<strategyInstances>>
-
 @interface SaleFactory ()
 
-@property (nonatomic, strong) id<ISaleFactory> factoryProxy;
+@property (nonatomic, strong) NSString *fileName;
+
+//存放所有的strategy 的缓存 即：NSDictionary<strategyName, strategyInstances>
+@property (nonatomic, strong) NSDictionary *strategyCache;
+
+//商品和他对应要用到的策略类,即:NSDictionary<barcode, list<strategyInstances>>
+@property (nonatomic, strong) NSDictionary *goodsStrategyMap;
 
 @end
 
@@ -25,17 +28,29 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
 
 #pragma mark - Instance LifeCycle
 
-+ (void)initialize {
-    if (self == [SaleFactory class]) {
+- (instancetype)init {
+    if (self = [super init]) {
+    
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithFileName:(NSString *)strategyFileName {
+    if (self = [super init]) {
+        self.fileName = strategyFileName;
         [self configureMaps];
     }
+    
+    return self;
 }
+
 
 #pragma mark - ISaleStrategy 接口
 
 - (id<ISaleStrategy>)createInstanceForObject:(GoodsItem *)item {
     NSString *barCode   = [item barCode];
-    NSArray *strategies = [g_goodsStrategyMap objectForKey:barCode]; //同一个商品会有多种优惠
+    NSArray *strategies = [self.goodsStrategyMap objectForKey:barCode]; //同一个商品会有多种优惠
 
     if (!strategies || !strategies.count ) {
         return [SaleNormal new];
@@ -57,12 +72,15 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
 /**
  *  将策略信息从内存文件中读出来， 并转化为2个map
  */
-+ (void)configureMaps {
-    NSString *urlPath  = [[NSBundle mainBundle] pathForResource:@"SaleStrategies.plist" ofType:nil];
-    NSArray *array     = [NSArray arrayWithContentsOfFile:urlPath];
+- (void)configureMaps {
+    NSString *urlPath  = [[NSBundle mainBundle] pathForResource:self.fileName ofType:nil];
+    NSArray  *array    = [NSArray arrayWithContentsOfFile:urlPath];
+    
+    NSCParameterAssert(urlPath);
+    NSCParameterAssert(array);
 
-    g_goodsStrategyMap = [NSMutableDictionary dictionary];
-    g_strategyCache    = [NSMutableDictionary dictionary];
+    self.goodsStrategyMap = [NSMutableDictionary dictionary];
+    self.strategyCache    = [NSMutableDictionary dictionary];
     
     for (NSDictionary *dic in array) {
        SaleStrategy *strategy = [[SaleStrategy alloc] initWithDictionary:dic error:nil];
@@ -70,9 +88,9 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
         if (strategy) {
             NSArray<NSString *> *products = strategy.products;
             
-            //分类，生成 g_goodsStrategyMap
+            //分类，生成 goodsStrategyMap
             for (NSString *barCode in products) {
-                [self configureGoodsStrategyMap:(NSMutableDictionary *)g_goodsStrategyMap
+                [self configureGoodsStrategyMap:(NSMutableDictionary *)self.goodsStrategyMap
                                      forBarCode:barCode
                                    saleStrategy:strategy];
             }
@@ -80,7 +98,7 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
     }
 }
 
-+ (void)configureGoodsStrategyMap:(NSMutableDictionary *)map
+- (void)configureGoodsStrategyMap:(NSMutableDictionary *)map
                        forBarCode:(NSString *)barCode
                      saleStrategy:(SaleStrategy *)info {
     NSMutableArray *strategys = [map objectForKey:barCode];
@@ -98,20 +116,20 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
     }
 }
 
-+ (id<ISaleStrategy>)strategyFromCache:(SaleStrategy *)strategyInfo {
+- (id<ISaleStrategy>)strategyFromCache:(SaleStrategy *)strategyInfo {
     NSCParameterAssert(strategyInfo.className);
     NSCParameterAssert(strategyInfo.saleName);
     
     NSString *className = strategyInfo.className;
     NSString *saleName  = strategyInfo.saleName;
-    id<ISaleStrategy> s = [g_strategyCache objectForKey:saleName];
+    id<ISaleStrategy> s = [self.strategyCache objectForKey:saleName];
     
     if (!s) {//反射创建对象
         Class cls = NSClassFromString(className);
         
         if (cls != Nil && [cls conformsToProtocol:@protocol(ISaleStrategy)]) {
             s = [[cls alloc] initWithDict:strategyInfo.paramters];
-            [g_strategyCache setValue:s forKey:saleName];
+            [self.strategyCache setValue:s forKey:saleName];
             [((id <ISaleStrategy>)s) setStrategyDescription:saleName];
         } else {
             NSLog(@"--找不到类:%@ ", className);

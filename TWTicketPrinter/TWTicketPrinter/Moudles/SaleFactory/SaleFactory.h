@@ -16,4 +16,9 @@
 
 @interface SaleFactory : NSObject <ISaleFactory>
 
+@property (nonatomic, strong, readonly) NSDictionary *strategyCache;
+@property (nonatomic, strong, readonly) NSDictionary *goodsStrategyMap;
+
+- (instancetype)initWithFileName:(NSString *)strategyFileName;
+
 @end
