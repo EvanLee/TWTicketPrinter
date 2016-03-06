@@ -9,7 +9,7 @@
 #import "Kiwi.h"
 #import "TicketPrinter.h"
 
-SPEC_BEGIN (SaleTicketPrinterSpec1)
+SPEC_BEGIN (SaleTicketPrinterSpec)
 
 describe(@"SaleTicketSpec", ^{
     

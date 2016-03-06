@@ -8,14 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol IPrintable;
-
 @protocol IPrintStrategy <NSObject>
 
 @required
-- (id<IPrintable>)printInfo:(id)data;
-
-@optional
-- (id<IPrintable>)printExtraInfo:(id)data;
+- (void)buildOutput:(id)output data:(id)data;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "SaleNormal.h"
 #import "GoodsItem.h"
-#import "NormalPrinter.h"
+#import "OutputBuilder.h"
 
 @interface SaleNormal ()
 
@@ -29,7 +29,7 @@
 }
 
 
-#pragma mark - ISaleStrategy Implement
+#pragma mark - ISaleStrategy Impl
 
 - (void)calcResultsForData:(GoodsItem *)data {
     
@@ -48,8 +48,15 @@
     return self.strategyName;
 }
 
-- (id<IPrintable>)printInfo:(GoodsItem *)data {
-    return [[NormalPrinter alloc] initWithTarget:data];
+
+- (void)buildOutput:(OutputBuilder *)output data:(GoodsItem *)data {
+    NSString *goodsInfo = [NSString stringWithFormat:@"名称：%@, 数量：%@，单价：%.2f(元), 小计:%.2f(元)",
+                         data.goodsName,
+                         [NSString stringWithFormat:@"%ld%@", data.count, data.unitsName],
+                         data.price,
+                         data.totalPrice];
+    
+    [output addBaseData:goodsInfo];
 }
 
 
