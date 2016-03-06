@@ -11,4 +11,10 @@
 
 @interface SalesFeeGoods : NSObject <ISaleStrategy>
 
+@property (nonatomic, assign, readonly) NSUInteger needsNumber;
+@property (nonatomic, assign, readonly) NSUInteger feeNumber;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
+- (instancetype)initWithNeedsNumber:(NSUInteger)needsNumber feeNumber:(NSUInteger)feeNumber;
+
 @end

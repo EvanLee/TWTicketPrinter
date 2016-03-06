@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  小票打印类，外观模式
+ */
+
 @interface GoodsPrinter : NSObject
 
 - (void)printList:(NSString *)list;

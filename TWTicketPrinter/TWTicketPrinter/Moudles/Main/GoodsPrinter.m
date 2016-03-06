@@ -19,8 +19,6 @@ NSDictionary *goodsInfoMap;
 
 @interface GoodsPrinter ()
 
-@property (nonatomic, strong) NSMutableDictionary *buyMap;
-
 @property (nonatomic, assign) CGFloat total;
 @property (nonatomic, assign) CGFloat saveTotal;
 
@@ -29,14 +27,14 @@ NSDictionary *goodsInfoMap;
 
 @property (nonatomic, strong) SaleFactory    *salefactory;
 @property (nonatomic, strong) TicketOutputor *outputor;
-
-@property (nonatomic, strong) NSArray *goodsItemList;
+@property (nonatomic, strong) NSArray        *goodsItemList;
 
 @end
 
 @implementation GoodsPrinter
 
 #pragma mark - Instance LifeCycle
+
 + (void)initialize {
     if (self == [GoodsPrinter class]) {
         goodsInfoMap = [NSMutableDictionary dictionary];
@@ -78,7 +76,7 @@ NSDictionary *goodsInfoMap;
 }
 
 - (void)processForItem:(GoodsItem *)item {
-    id<ISaleStrategy> calculator = [self.salefactory calculatorForGoods:item];
+    id<ISaleStrategy> calculator = [self.salefactory createInstanceForObject:item];
     [calculator calcResultsForData:item];
     
     self.total     += 0;

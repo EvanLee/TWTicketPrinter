@@ -36,4 +36,14 @@
     _count += count;
 }
 
+#pragma mark - Getters & Setters
+
+- (NSString *)barCode {
+    return self.info.barCode;
+}
+
+- (CGFloat)price {
+    return self.info.price;
+}
+
 @end

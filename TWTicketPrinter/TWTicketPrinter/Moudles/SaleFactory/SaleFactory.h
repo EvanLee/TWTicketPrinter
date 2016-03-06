@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "ISaleStrategy.h"
-
-@class GoodsItem;
+#import "ISaleFactory.h"
 
 /**
- *  SaleFactory 负责算法策略的创建
+ *  SaleFactory 负责算法策略的创建, 享元模式
  */
 
-@interface SaleFactory : NSObject
-
-- (id<ISaleStrategy>)calculatorForGoods:(GoodsItem *)item;
+@interface SaleFactory : NSObject <ISaleFactory>
 
 @end
