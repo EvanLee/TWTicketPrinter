@@ -12,5 +12,10 @@
 
 @required
 - (void)calcResultsForData:(id)data;
+- (void)setStrategyDescription:(NSString *)name ;
+- (NSString *)strategyDescription;
+
+@optional
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
 @end

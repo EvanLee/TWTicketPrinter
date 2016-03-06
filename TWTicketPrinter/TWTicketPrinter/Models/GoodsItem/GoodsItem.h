@@ -13,7 +13,12 @@
 
 @interface GoodsItem : NSObject
 
+@property (nonatomic, copy, readonly) NSString   *barCode;
+@property (nonatomic, copy, readonly) NSString   *unitsName;
+@property (nonatomic, copy, readonly) NSString   *goodsName;
+
 @property (nonatomic, assign, readonly) NSUInteger count;
+@property (nonatomic, assign, readonly) CGFloat    price;
 
 @property (nonatomic, assign) CGFloat totalPrice;
 @property (nonatomic, assign) CGFloat savePrice;

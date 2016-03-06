@@ -37,7 +37,7 @@ NSString * const Goods_DS_File = @"Goods.plist";
     }
     
     NSArray *list = [self parseJosnString:jsonString error:error];
-    if (*error) {
+    if (error && *error) {
         return;
     }
     

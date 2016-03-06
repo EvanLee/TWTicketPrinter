@@ -1,15 +1,15 @@
 //
-//  GoodsPrinter.h
+//  IPrintable.h
 //  TWTicketPrinter
 //
-//  Created by Evan on 16/3/5.
+//  Created by Evan on 16/3/6.
 //  Copyright © 2016年 ChangHong. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface GoodsPrinter : NSObject
+@protocol IPrintable <NSObject>
 
-- (void)printList:(NSString *)list;
+- (NSString *)printString;
 
 @end
