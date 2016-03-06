@@ -14,10 +14,13 @@ SPEC_BEGIN (SaleFactorySpec)
 describe(@"SaleFactorySpec", ^{
     
     context(@"Give a Facotry", ^{
-        SaleFactory *factory = [[SaleFactory alloc] initWithFileName:@"SaleStrategies.plist"];
+        SaleFactory *factory = [[SaleFactory alloc] initWithFileName:@"SaleStrategies_Rebate.plist"];
         
         it(@"Should be pass testiing", ^{
             [[factory shouldNot] beNil];
+            
+            NSInteger mapCount = factory.goodsStrategyMap.count;
+            [[theValue(mapCount) should] equal:theValue(2)];
         });
     });
 });
