@@ -25,8 +25,6 @@
 
 - (instancetype)initWithGoodsInfo:(GoodsInfo *)goods;
 
-- (NSString *)barCode;
-
 //叠加商品个数
 - (void)addOne;
 - (void)addWithCount:(NSUInteger)count;

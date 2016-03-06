@@ -19,6 +19,7 @@ NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
 @interface SalesFeeGoods ()
 @property (nonatomic, assign) NSUInteger needsNumber;
 @property (nonatomic, assign) NSUInteger feeNumber;
+@property (nonatomic, copy) NSString *strategyName;
 @end
 
 @implementation SalesFeeGoods
@@ -70,6 +71,14 @@ NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
     
     data.totalPrice  = payCount * price;
     data.savePrice   = feeCount * price;
+}
+
+- (void)setStrategyDescription:(NSString *)name {
+    _strategyName = name;
+}
+
+- (NSString *)strategyDescription {
+    return self.strategyName;
 }
 
 - (id<IPrintable>)printInfo:(GoodsItem *)data {

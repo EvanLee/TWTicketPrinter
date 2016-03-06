@@ -37,7 +37,7 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
     NSString *barCode   = [item barCode];
     NSArray *strategies = [g_goodsStrategyMap objectForKey:barCode]; //同一个商品会有多种优惠
 
-    if (strategies || strategies.count ) {
+    if (!strategies || !strategies.count ) {
         return [SaleNormal new];
     }
     
@@ -100,16 +100,19 @@ NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:
 
 + (id<ISaleStrategy>)strategyFromCache:(SaleStrategy *)strategyInfo {
     NSCParameterAssert(strategyInfo.className);
+    NSCParameterAssert(strategyInfo.saleName);
     
     NSString *className = strategyInfo.className;
-    id<ISaleStrategy> s = [g_strategyCache objectForKey:className];
+    NSString *saleName  = strategyInfo.saleName;
+    id<ISaleStrategy> s = [g_strategyCache objectForKey:saleName];
     
     if (!s) {//反射创建对象
         Class cls = NSClassFromString(className);
         
-        if (cls != Nil) {
+        if (cls != Nil && [cls conformsToProtocol:@protocol(ISaleStrategy)]) {
             s = [[cls alloc] initWithDict:strategyInfo.paramters];
-            [g_strategyCache setValue:s forKey:className];
+            [g_strategyCache setValue:s forKey:saleName];
+            [((id <ISaleStrategy>)s) setStrategyDescription:saleName];
         } else {
             NSLog(@"--找不到类:%@ ", className);
         }

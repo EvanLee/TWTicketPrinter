@@ -11,6 +11,9 @@
 #import "NormalPrinter.h"
 
 @interface SaleNormal ()
+
+@property (nonatomic, copy) NSString *strategyName;
+
 @end
 
 @implementation SaleNormal
@@ -35,6 +38,14 @@
     
     data.totalPrice  = number * price;
     data.savePrice   = 0;
+}
+
+- (void)setStrategyDescription:(NSString *)name {
+    _strategyName = name;
+}
+
+- (NSString *)strategyDescription {
+    return self.strategyName;
 }
 
 - (id<IPrintable>)printInfo:(GoodsItem *)data {

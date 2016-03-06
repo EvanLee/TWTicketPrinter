@@ -6,7 +6,7 @@
 //  Copyright © 2016年 ChangHong. All rights reserved.
 //
 
-#import "GoodsPrinter.h"
+#import "TicketPrinter.h"
 #import <UIKit/UIKit.h>
 #import "ISaleStrategy.h"
 #import "SaleFactory.h"
@@ -17,7 +17,7 @@
 #import "IPrintable.h"
 #import "IPrintStrategy.h"
 
-@interface GoodsPrinter ()
+@interface TicketPrinter ()
 
 @property (nonatomic, assign) CGFloat total;
 @property (nonatomic, assign) CGFloat saveTotal;
@@ -31,15 +31,15 @@
 
 @end
 
-@implementation GoodsPrinter
+@implementation TicketPrinter
 
 #pragma mark - Instance LifeCycle
 
 + (instancetype)defaultPrinter {
-    static GoodsPrinter *printer = nil;
+    static TicketPrinter *printer = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        printer = [GoodsPrinter new];
+        printer = [TicketPrinter new];
         printer.inputParser = [BarCodeParser new];
         printer.salefactory = [SaleFactory new];
         printer.outputor    = [TicketOutputor new];
@@ -50,9 +50,9 @@
 
 #pragma mark - Public Methods
 
-- (NSString *)printList:(NSString *)jsonString {
+- (NSString *)printTicketWithFileName:(NSString *)inputFileName {
     //解析
-    [self.inputParser parse:jsonString error:nil];
+    [self.inputParser parse:inputFileName error:nil];
     self.goodsItemList = [self.inputParser getResults];
     
     //处理，计算
@@ -103,7 +103,8 @@
     if ([obj respondsToSelector:@selector(printExtraInfo:)]) {
         id<IPrintable> extra = [obj printInfo:item];
         if (extra) {
-            [self.outputor addExtraData:extra];
+            id <ISaleStrategy> s = (id <ISaleStrategy>) obj;
+            [self.outputor addExtraData:extra forType:[s strategyDescription]];
         }
     }
 }

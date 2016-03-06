@@ -16,6 +16,7 @@ NSString * const Sales_Rebate_Key = @"Rebate";
 @interface SalesRebate ()
 
 @property (nonatomic, assign) CGFloat rebate;
+@property (nonatomic, copy) NSString *strategyName;
 
 @end
 
@@ -54,6 +55,14 @@ NSString * const Sales_Rebate_Key = @"Rebate";
 
     data.totalPrice  = total * discount;
     data.savePrice   = total - data.totalPrice;
+}
+
+- (void)setStrategyDescription:(NSString *)name {
+    _strategyName = name;
+}
+
+- (NSString *)strategyDescription {
+    return self.strategyName;
 }
 
 - (id<IPrintable>)printInfo:(GoodsItem *)data {

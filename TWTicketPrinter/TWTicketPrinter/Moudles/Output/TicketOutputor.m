@@ -12,7 +12,7 @@
 @interface TicketOutputor ()
 
 @property (nonatomic, strong) NSArray<id<IPrintable>> *baseList;
-@property (nonatomic, strong) NSArray<id<IPrintable>> *extrasList;
+@property (nonatomic, strong) NSMutableDictionary *extraMap;
 
 @end
 
@@ -25,17 +25,20 @@
     [array addObject:printData];
 }
 
-- (void)addExtraData:(id<IPrintable>)printExtraData {
-    NSMutableArray *array = (NSMutableArray *)self.extrasList;
+- (void)addExtraData:(id<IPrintable>)printExtraData forType:(NSString *)type {
+    NSMutableArray<id<IPrintable>> *array = [self.extraMap objectForKey:type];
+    
+    if (!array) {
+        array = [NSMutableArray<id<IPrintable>> array];
+        [self.extraMap setValue:array forKey:type];
+    }
+    
     [array addObject:printExtraData];
 }
 
 - (void)printAllToString:(NSMutableString *)outputString {
     [outputString appendString:@"***<没钱赚商店>购物清单***\n"];
-    if (!self.extrasList) {
-        return;
-    }
-  
+
     [self printBaseInfoToString:outputString];
     [self printExtraInfoToString:outputString];
 }
@@ -52,12 +55,19 @@
 }
 
 - (void)printExtraInfoToString:(NSMutableString *)outputString {
-    for (id<IPrintable> obj in self.extrasList) {
-        [outputString appendString:[obj printString]];
-        [outputString appendString:@"\n"];
-    }
-    
-    [self printEndSection:outputString];
+
+    [self.extraMap enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *list, BOOL * _Nonnull stop) {
+        [outputString appendString:[NSString stringWithFormat:@"%@:\n", key]];
+        
+        for (id<IPrintable> obj in list) {
+            [outputString appendString:[obj printString]];
+            [outputString appendString:@"\n"];
+        }
+        
+        if (list && list.count) {
+            [self printEndSection:outputString];
+        }
+    }];
 }
 
 - (void)printEndSection:(NSMutableString *)outputString {
@@ -73,11 +83,11 @@
     return _baseList;
 }
 
-- (NSArray<id<IPrintable>> *)extrasList {
-    if (!_extrasList) {
-        _extrasList = [NSMutableArray array];
+- (NSMutableDictionary *)extraMap {
+    if (!_extraMap) {
+        _extraMap = [NSMutableDictionary dictionary];
     }
-    return _extrasList;
+    return _extraMap;
 }
 
 @end

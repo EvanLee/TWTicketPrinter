@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204733281C8C63A500840998 /* TicketPrinterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 204733271C8C63A500840998 /* TicketPrinterSpec.m */; };
+		2047332B1C8C644900840998 /* TicketPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047332A1C8C644900840998 /* TicketPrinter.m */; };
 		2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689691C8C196500068621 /* SaleFactorySpec.m */; };
 		2096896F1C8C2C5A00068621 /* NormalPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096896E1C8C2C5A00068621 /* NormalPrinter.m */; };
 		209689731C8C2CC500068621 /* GoodsFeePrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689721C8C2CC500068621 /* GoodsFeePrinter.m */; };
@@ -21,7 +23,6 @@
 		20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4B11C8A8562009BEA75 /* GoodsInfo.m */; };
 		20DDE4B51C8A8992009BEA75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DDE4B41C8A8992009BEA75 /* CoreGraphics.framework */; };
 		20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */; };
-		20DDE4C31C8A8F0F009BEA75 /* GoodsPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */; };
 		20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C91C8A903A009BEA75 /* SaleFactory.m */; };
 		20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */; };
 		20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
@@ -54,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		0703FD3084CA31B04430046B /* libPods-TWTicketPrinter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWTicketPrinter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		204733271C8C63A500840998 /* TicketPrinterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketPrinterSpec.m; sourceTree = "<group>"; };
+		204733291C8C644900840998 /* TicketPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketPrinter.h; sourceTree = "<group>"; };
+		2047332A1C8C644900840998 /* TicketPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketPrinter.m; sourceTree = "<group>"; };
 		209689691C8C196500068621 /* SaleFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactorySpec.m; sourceTree = "<group>"; };
 		2096896D1C8C2C5A00068621 /* NormalPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalPrinter.h; sourceTree = "<group>"; };
 		2096896E1C8C2C5A00068621 /* NormalPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalPrinter.m; sourceTree = "<group>"; };
@@ -83,8 +87,6 @@
 		20DDE4B41C8A8992009BEA75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		20DDE4BD1C8A8CC4009BEA75 /* GoodsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsItem.h; sourceTree = "<group>"; };
 		20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsItem.m; sourceTree = "<group>"; };
-		20DDE4C11C8A8F0F009BEA75 /* GoodsPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPrinter.h; sourceTree = "<group>"; };
-		20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPrinter.m; sourceTree = "<group>"; };
 		20DDE4C61C8A8FDE009BEA75 /* ISaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISaleStrategy.h; sourceTree = "<group>"; };
 		20DDE4C81C8A903A009BEA75 /* SaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleFactory.h; sourceTree = "<group>"; };
 		20DDE4C91C8A903A009BEA75 /* SaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactory.m; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				20DDE4E91C8B2729009BEA75 /* GoodsCalculator */,
 				20DDE4CB1C8A9E96009BEA75 /* GoodsParser */,
 				20DDE4901C8A7A6B009BEA75 /* Info.plist */,
+				204733271C8C63A500840998 /* TicketPrinterSpec.m */,
 			);
 			path = TWTicketPrinterTests;
 			sourceTree = "<group>";
@@ -265,11 +268,12 @@
 		20DDE49E1C8A7B20009BEA75 /* Moudles */ = {
 			isa = PBXGroup;
 			children = (
+				204733291C8C644900840998 /* TicketPrinter.h */,
+				2047332A1C8C644900840998 /* TicketPrinter.m */,
 				20DDE4DC1C8ACB67009BEA75 /* Parser */,
 				20DDE4D01C8AC198009BEA75 /* Output */,
 				20DDE4C71C8A902B009BEA75 /* SaleFactory */,
 				20DDE4C41C8A8F54009BEA75 /* SaleStrategise */,
-				20DDE4C01C8A8EDF009BEA75 /* Main */,
 			);
 			path = Moudles;
 			sourceTree = "<group>";
@@ -320,15 +324,6 @@
 				20DDE4BE1C8A8CC4009BEA75 /* GoodsItem.m */,
 			);
 			path = GoodsItem;
-			sourceTree = "<group>";
-		};
-		20DDE4C01C8A8EDF009BEA75 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				20DDE4C11C8A8F0F009BEA75 /* GoodsPrinter.h */,
-				20DDE4C21C8A8F0F009BEA75 /* GoodsPrinter.m */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		20DDE4C41C8A8F54009BEA75 /* SaleStrategise */ = {
@@ -676,7 +671,7 @@
 				20DDE4DF1C8ACB7F009BEA75 /* BarCodeParser.m in Sources */,
 				20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */,
 				20DDE4E81C8AF7D6009BEA75 /* JSONKeyMapper+MapExtentsion.m in Sources */,
-				20DDE4C31C8A8F0F009BEA75 /* GoodsPrinter.m in Sources */,
+				2047332B1C8C644900840998 /* TicketPrinter.m in Sources */,
 				2096897C1C8C32D200068621 /* GoodsFeeExtraPrinter.m in Sources */,
 				209689781C8C322A00068621 /* GoodsRebatePrinter.m in Sources */,
 				20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */,
@@ -701,6 +696,7 @@
 			files = (
 				2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */,
 				20DDE4EB1C8B2740009BEA75 /* GoodCalcSpec.m in Sources */,
+				204733281C8C63A500840998 /* TicketPrinterSpec.m in Sources */,
 				20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */,
 				20DDE4E21C8AD5CA009BEA75 /* GoodsItem.m in Sources */,
 			);

@@ -12,8 +12,10 @@
  *  小票打印类，外观模式
  */
 
-@interface GoodsPrinter : NSObject
+@interface TicketPrinter : NSObject
 
-- (NSString *)printList:(NSString *)jsonString;
++ (instancetype)defaultPrinter;
+
+- (NSString *)printTicketWithFileName:(NSString *)inputFileName;
 
 @end

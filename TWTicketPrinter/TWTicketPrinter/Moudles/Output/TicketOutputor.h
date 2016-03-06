@@ -27,7 +27,7 @@
  *
  *  @param printExtraData 
  */
-- (void)addExtraData:(id<IPrintable>)printExtraData;
+- (void)addExtraData:(id<IPrintable>)printExtraData forType:(NSString *)type;
 
 - (void)printAllToString:(NSMutableString *)outputString;
 

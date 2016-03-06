@@ -11,6 +11,8 @@
 
 @interface GoodsFeeExtraPrinter : NSObject<IPrintable>
 
+@property (nonatomic, copy) NSString *type;
+
 - (instancetype)initWithTarget:(id)obj;
 
 @end
