@@ -14,6 +14,6 @@
 
 @interface GoodsPrinter : NSObject
 
-- (void)printList:(NSString *)list;
+- (NSString *)printList:(NSString *)jsonString;
 
 @end

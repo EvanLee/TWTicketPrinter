@@ -14,8 +14,8 @@
 #import "TicketOutputor.h"
 #import "GoodsItem.h"
 #import "BarCodeParser.h"
-
-NSDictionary *goodsInfoMap;
+#import "IPrintable.h"
+#import "IPrintStrategy.h"
 
 @interface GoodsPrinter ()
 
@@ -35,12 +35,6 @@ NSDictionary *goodsInfoMap;
 
 #pragma mark - Instance LifeCycle
 
-+ (void)initialize {
-    if (self == [GoodsPrinter class]) {
-        goodsInfoMap = [NSMutableDictionary dictionary];
-    }
-}
-
 + (instancetype)defaultPrinter {
     static GoodsPrinter *printer = nil;
     static dispatch_once_t onceToken;
@@ -56,7 +50,7 @@ NSDictionary *goodsInfoMap;
 
 #pragma mark - Public Methods
 
-- (void)printList:(NSString *)jsonString {
+- (NSString *)printList:(NSString *)jsonString {
     //解析
     [self.inputParser parse:jsonString error:nil];
     self.goodsItemList = [self.inputParser getResults];
@@ -65,9 +59,15 @@ NSDictionary *goodsInfoMap;
     [self processList];
     
     //输出
-    [self.outputor printAll];
+    NSMutableString *stringBuilder = [NSMutableString string];
+    
+    [self.outputor printAllToString:stringBuilder];
+    [self printTotalTailToString:stringBuilder];
+    
+    return stringBuilder;
 }
 
+#pragma mark - Private Methods
 
 - (void)processList {
     for (GoodsItem *item in self.goodsItemList) {
@@ -82,10 +82,40 @@ NSDictionary *goodsInfoMap;
     self.total     += item.totalPrice;
     self.saveTotal += item.savePrice;
     
-    [self.outputor add:item];
+    if ([calculator conformsToProtocol:@protocol(IPrintStrategy)]) {
+        [self addPrintInfo:(id<IPrintStrategy>)calculator item:item];
+    }
 }
 
-#pragma mark - Private Methods
+/**
+ *  将打印信息
+ *
+ *  @param obj  <#obj description#>
+ *  @param item <#item description#>
+ */
+- (void)addPrintInfo:(id<IPrintStrategy>)obj item:(GoodsItem *)item {
+    id<IPrintable> printInfo = [obj printInfo:item];
+    
+    if (printInfo) {
+        [self.outputor addBaseData:printInfo];
+    }
+    
+    if ([obj respondsToSelector:@selector(printExtraInfo:)]) {
+        id<IPrintable> extra = [obj printInfo:item];
+        if (extra) {
+            [self.outputor addExtraData:extra];
+        }
+    }
+}
+
+- (void)printTotalTailToString:(NSMutableString *)stringBuilder {
+    [stringBuilder appendString:[NSString stringWithFormat:@"总计：%.2f(元)\n", self.total]];
+    
+    if (self.saveTotal > 0) {
+        [stringBuilder appendString:[NSString stringWithFormat:@"节省：%.2f(元)\n", self.saveTotal]];
+    }
+    [stringBuilder appendString:@"***********************\n"];
+}
 
 
 @end
