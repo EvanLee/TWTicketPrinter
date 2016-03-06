@@ -10,10 +10,6 @@
 		204733281C8C63A500840998 /* TicketPrinterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 204733271C8C63A500840998 /* TicketPrinterSpec.m */; };
 		2047332B1C8C644900840998 /* TicketPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047332A1C8C644900840998 /* TicketPrinter.m */; };
 		2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689691C8C196500068621 /* SaleFactorySpec.m */; };
-		2096896F1C8C2C5A00068621 /* NormalPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096896E1C8C2C5A00068621 /* NormalPrinter.m */; };
-		209689731C8C2CC500068621 /* GoodsFeePrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689721C8C2CC500068621 /* GoodsFeePrinter.m */; };
-		209689781C8C322A00068621 /* GoodsRebatePrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689771C8C322A00068621 /* GoodsRebatePrinter.m */; };
-		2096897C1C8C32D200068621 /* GoodsFeeExtraPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2096897B1C8C32D200068621 /* GoodsFeeExtraPrinter.m */; };
 		20DDE47F1C8A7A6A009BEA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE47D1C8A7A6A009BEA75 /* Main.storyboard */; };
 		20DDE4811C8A7A6B009BEA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4801C8A7A6B009BEA75 /* Assets.xcassets */; };
 		20DDE4841C8A7A6B009BEA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4821C8A7A6B009BEA75 /* LaunchScreen.storyboard */; };
@@ -59,15 +55,6 @@
 		204733291C8C644900840998 /* TicketPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketPrinter.h; sourceTree = "<group>"; };
 		2047332A1C8C644900840998 /* TicketPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketPrinter.m; sourceTree = "<group>"; };
 		209689691C8C196500068621 /* SaleFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactorySpec.m; sourceTree = "<group>"; };
-		2096896D1C8C2C5A00068621 /* NormalPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalPrinter.h; sourceTree = "<group>"; };
-		2096896E1C8C2C5A00068621 /* NormalPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalPrinter.m; sourceTree = "<group>"; };
-		209689711C8C2CC500068621 /* GoodsFeePrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsFeePrinter.h; sourceTree = "<group>"; };
-		209689721C8C2CC500068621 /* GoodsFeePrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsFeePrinter.m; sourceTree = "<group>"; };
-		209689751C8C2E7800068621 /* IPrintable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPrintable.h; sourceTree = "<group>"; };
-		209689761C8C322A00068621 /* GoodsRebatePrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsRebatePrinter.h; sourceTree = "<group>"; };
-		209689771C8C322A00068621 /* GoodsRebatePrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsRebatePrinter.m; sourceTree = "<group>"; };
-		2096897A1C8C32D200068621 /* GoodsFeeExtraPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsFeeExtraPrinter.h; sourceTree = "<group>"; };
-		2096897B1C8C32D200068621 /* GoodsFeeExtraPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsFeeExtraPrinter.m; sourceTree = "<group>"; };
 		2096897E1C8C4D3000068621 /* IPrintStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPrintStrategy.h; sourceTree = "<group>"; };
 		20DDE4711C8A7A6A009BEA75 /* TWTicketPrinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTicketPrinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DDE47E1C8A7A6A009BEA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,54 +133,6 @@
 				209689691C8C196500068621 /* SaleFactorySpec.m */,
 			);
 			path = SaleFactorySepc;
-			sourceTree = "<group>";
-		};
-		2096896B1C8C25BB00068621 /* Printers */ = {
-			isa = PBXGroup;
-			children = (
-				209689751C8C2E7800068621 /* IPrintable.h */,
-				209689791C8C32A800068621 /* GoodFeeExtraPrinter */,
-				209689701C8C2C7A00068621 /* GoodsFeePrinter */,
-				209689741C8C2E5200068621 /* GoodsRebatePrinter */,
-				2096896C1C8C2C3500068621 /* NormalPrinter */,
-			);
-			path = Printers;
-			sourceTree = "<group>";
-		};
-		2096896C1C8C2C3500068621 /* NormalPrinter */ = {
-			isa = PBXGroup;
-			children = (
-				2096896D1C8C2C5A00068621 /* NormalPrinter.h */,
-				2096896E1C8C2C5A00068621 /* NormalPrinter.m */,
-			);
-			path = NormalPrinter;
-			sourceTree = "<group>";
-		};
-		209689701C8C2C7A00068621 /* GoodsFeePrinter */ = {
-			isa = PBXGroup;
-			children = (
-				209689711C8C2CC500068621 /* GoodsFeePrinter.h */,
-				209689721C8C2CC500068621 /* GoodsFeePrinter.m */,
-			);
-			path = GoodsFeePrinter;
-			sourceTree = "<group>";
-		};
-		209689741C8C2E5200068621 /* GoodsRebatePrinter */ = {
-			isa = PBXGroup;
-			children = (
-				209689761C8C322A00068621 /* GoodsRebatePrinter.h */,
-				209689771C8C322A00068621 /* GoodsRebatePrinter.m */,
-			);
-			path = GoodsRebatePrinter;
-			sourceTree = "<group>";
-		};
-		209689791C8C32A800068621 /* GoodFeeExtraPrinter */ = {
-			isa = PBXGroup;
-			children = (
-				2096897A1C8C32D200068621 /* GoodsFeeExtraPrinter.h */,
-				2096897B1C8C32D200068621 /* GoodsFeeExtraPrinter.m */,
-			);
-			path = GoodFeeExtraPrinter;
 			sourceTree = "<group>";
 		};
 		20DDE4681C8A7A6A009BEA75 = {
@@ -360,7 +299,6 @@
 			children = (
 				20DDE4D11C8AC1BE009BEA75 /* OutputBuilder.h */,
 				20DDE4D21C8AC1BE009BEA75 /* OutputBuilder.m */,
-				2096896B1C8C25BB00068621 /* Printers */,
 			);
 			path = Output;
 			sourceTree = "<group>";
@@ -672,14 +610,10 @@
 				20DDE4BF1C8A8CC4009BEA75 /* GoodsItem.m in Sources */,
 				20DDE4E81C8AF7D6009BEA75 /* JSONKeyMapper+MapExtentsion.m in Sources */,
 				2047332B1C8C644900840998 /* TicketPrinter.m in Sources */,
-				2096897C1C8C32D200068621 /* GoodsFeeExtraPrinter.m in Sources */,
-				209689781C8C322A00068621 /* GoodsRebatePrinter.m in Sources */,
 				20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */,
 				20DDE4A41C8A7B20009BEA75 /* main.m in Sources */,
 				20DDE4F11C8BBBE5009BEA75 /* SaleStrategy.m in Sources */,
-				2096896F1C8C2C5A00068621 /* NormalPrinter.m in Sources */,
 				20DDE4F61C8BC6D7009BEA75 /* SaleNormal.m in Sources */,
-				209689731C8C2CC500068621 /* GoodsFeePrinter.m in Sources */,
 				20DDE4CA1C8A903A009BEA75 /* SaleFactory.m in Sources */,
 				20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */,
 				20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */,

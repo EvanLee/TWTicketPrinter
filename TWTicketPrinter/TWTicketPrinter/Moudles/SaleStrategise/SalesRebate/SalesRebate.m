@@ -9,7 +9,7 @@
 #import "SalesRebate.h"
 #import "ELCocoaExts.h"
 #import "GoodsItem.h"
-#import "GoodsRebatePrinter.h"
+#import "OutputBuilder.h"
 
 NSString * const Sales_Rebate_Key = @"Rebate";
 
@@ -45,7 +45,7 @@ NSString * const Sales_Rebate_Key = @"Rebate";
     return self;
 }
 
-#pragma mark - ISaleStrategy 接口
+#pragma mark - ISaleStrategy Impl
 
 - (void)calcResultsForData:(GoodsItem *)data {
     NSUInteger number = data.count;
@@ -65,8 +65,17 @@ NSString * const Sales_Rebate_Key = @"Rebate";
     return self.strategyName;
 }
 
-- (id<IPrintable>)printInfo:(GoodsItem *)data {
-    return [[GoodsRebatePrinter alloc] initWithTarget:data];
+#pragma mark - output Impl
+
+- (void)buildOutput:(OutputBuilder *)output data:(GoodsItem *)data {
+    NSString *goodsInfo = [NSString stringWithFormat:@"名称：%@, 数量：%@，单价：%.2f(元), 小计:%.2f(元), 节省%.2f(元)",
+                           data.goodsName,
+                           [NSString stringWithFormat:@"%ld%@", data.count, data.unitsName],
+                           data.price,
+                           data.totalPrice,
+                           data.savePrice];
+    
+    [output addBaseData:goodsInfo];
 }
 
 @end

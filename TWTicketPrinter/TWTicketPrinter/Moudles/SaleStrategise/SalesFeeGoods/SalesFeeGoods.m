@@ -9,9 +9,7 @@
 #import "SalesFeeGoods.h"
 #import "ELCocoaExts.h"
 #import "GoodsItem.h"
-#import "GoodsFeePrinter.h"
-#import "IPrintable.h"
-#import "GoodsFeeExtraPrinter.h"
+#import "OutputBuilder.h"
 
 NSString *const Sales_FeeGoods_NeedsKey = @"BuyNum";
 NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
@@ -57,12 +55,9 @@ NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
 #pragma mark - ISaleStrategy Implement
 
 - (void)calcResultsForData:(GoodsItem *)data {
-    NSUInteger number = data.count;
-    CGFloat price     = data.price;
-    
-    NSUInteger tmp = self.needsNumber + self.feeNumber;
-    NSUInteger payCount = (number / tmp) * self.needsNumber + number % tmp;
-    NSUInteger feeCount = number - payCount;
+    NSUInteger payCount = [self calcPayNumber:data];
+    NSUInteger feeCount = data.count - payCount;
+    CGFloat    price    = data.price;
     
     /**
      *  这里会有一个问题，假如活动是买三送一，那么用户买了七个，按照算法来是这样（3+1(赠送)）+（3+0(赠送)）
@@ -81,19 +76,32 @@ NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
     return self.strategyName;
 }
 
-- (id<IPrintable>)printInfo:(GoodsItem *)data {
-    return [[GoodsFeePrinter alloc] initWithTarget:data];
+#pragma mark - output
+
+- (void)buildOutput:(OutputBuilder *)output data:(GoodsItem *)data {
+    NSUInteger feeCount = data.count - [self calcPayNumber:data];
+    NSString *goodsInfo = [NSString stringWithFormat:@"名称：%@, 数量：%@，单价：%.2f(元), 小计:%.2f(元)",
+                           data.goodsName,
+                           [NSString stringWithFormat:@"%ld%@", data.count, data.unitsName],
+                           data.price,
+                           data.totalPrice];
+    
+    NSString *extraData = [NSString stringWithFormat:@"名称：%@, 数量：%@",
+                           data.goodsName,
+                           [NSString stringWithFormat:@"%ld%@", feeCount, data.unitsName]];
+    
+    
+    [output addBaseData:goodsInfo];
+    [output addExtraData:extraData forType:self.strategyName];
 }
 
-- (id<IPrintable>)printExtraInfo:(GoodsItem *)data {
+#pragma mark - Private Methods
+
+- (NSUInteger)calcPayNumber:(GoodsItem *)data {
     NSUInteger number = data.count;
     NSUInteger tmp = self.needsNumber + self.feeNumber;
-    NSUInteger payCount = (number / tmp) * self.needsNumber + number % tmp;
     
-    GoodsItem *newItem = [GoodsItem new];
-    [newItem addWithCount:number - payCount];
-
-    return [[GoodsFeeExtraPrinter alloc] initWithTarget:data];
+    return (number / tmp) * self.needsNumber + number % tmp;
 }
 
 @end

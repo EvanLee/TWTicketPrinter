@@ -9,6 +9,8 @@
 #import "StrategyProxy.h"
 #import "SalesRebate.h"
 #import "SalesFeeGoods.h"
+#import "GoodsItem.h"
+#import "OutputBuilder.h"
 
 @interface StrategyProxy ()
 
@@ -61,39 +63,17 @@
 }
 
 - (NSString *)strategyDescription {
-    
-    if (self.strategise.count) {
-        return [self.strategise[0] strategyDescription];
-    }
-    return self.strategyDescription;
+    return @"";
 }
 
-#pragma mark - IPrintStrategy Impl
+#pragma mark - output Impl
 
-/**
- *  IPrintStrategy 和 IPrintable，这样写还有问题，直接限制了接口，以后的扩展！还需要再思考
- *  感觉可以用迭代器模式来处理。 但是要交作业了，先这样处理满足目前的需求。
- */
-
-- (id<IPrintable>)printInfo:(id)data {
+- (void)buildOutput:(OutputBuilder *)output data:(GoodsItem *)data {
     for (id<IPrintStrategy> strategy in self.strategise) {
         if ([strategy conformsToProtocol:@protocol(IPrintStrategy)]) {
-            return [strategy printInfo:data];
+            [strategy buildOutput:output data:data];
         }
     }
-
-    return nil;
-}
-
-- (id<IPrintable>)printExtraInfo:(id)data {
-    for (id<IPrintStrategy> strategy in self.strategise) {
-        if ([strategy conformsToProtocol:@protocol(IPrintStrategy)] &&
-            [strategy respondsToSelector:@selector(printExtraInfo:)]) {
-            return [strategy printExtraInfo:data];
-        }
-    }
-    
-    return nil;
 }
 
 #pragma mark - Private Methods

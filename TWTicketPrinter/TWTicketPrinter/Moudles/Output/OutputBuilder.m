@@ -7,7 +7,6 @@
 //
 
 #import "OutputBuilder.h"
-#import "IPrintable.h"
 #import "ELCocoaExts.h"
 
 @interface OutputBuilder ()
@@ -24,7 +23,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _outputString = [NSMutableString string];
     }
     
     return self;
@@ -48,12 +46,19 @@
     [array addObject:extraString];
 }
 
-- (NSString *)getResultString {
-//    [outputString appendString:@"***<没钱赚商店>购物清单***\n"];
-
+- (void)beginWrite {
+    [self.outputString setString:@"***<没钱赚商店>购物清单***"];
+    [self writeNewLine];
     [self buildBaseData];
     [self buildExtraData];
-    
+}
+
+- (void)endWrite {
+    self.extraMap = nil;
+    self.baseList = nil;
+}
+
+- (NSString *)getResultString {
     return [self.outputString copy];
 }
 
@@ -115,6 +120,13 @@
         _extraMap = [NSMutableDictionary dictionary];
     }
     return _extraMap;
+}
+
+- (NSMutableString *)outputString {
+    if (!_outputString) {
+        _outputString = [NSMutableString string];
+    }
+    return _outputString;
 }
 
 @end

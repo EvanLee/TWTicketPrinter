@@ -14,7 +14,6 @@
 #import "OutputBuilder.h"
 #import "GoodsItem.h"
 #import "BarCodeParser.h"
-#import "IPrintable.h"
 #import "IPrintStrategy.h"
 
 @interface TicketPrinter ()
@@ -59,12 +58,11 @@
     [self processList];
     
     //输出
-    NSMutableString *stringBuilder = [NSMutableString string];
+    [self.outputor beginWrite];
+    [self writeTicketEnd];
+    [self.outputor endWrite];
     
-    [self.outputor printAllToString:stringBuilder];
-    [self printTotalTailToString:stringBuilder];
-    
-    return stringBuilder;
+    return [self.outputor getResultString];
 }
 
 #pragma mark - Private Methods
@@ -83,39 +81,18 @@
     self.saveTotal += item.savePrice;
     
     if ([calculator conformsToProtocol:@protocol(IPrintStrategy)]) {
-        [self addPrintInfo:(id<IPrintStrategy>)calculator item:item];
+        id<IPrintStrategy> printer = ((id<IPrintStrategy>)calculator);
+        [printer buildOutput:self.outputor data:item];
     }
 }
 
-/**
- *  将打印信息
- *
- *  @param obj  <#obj description#>
- *  @param item <#item description#>
- */
-- (void)addPrintInfo:(id<IPrintStrategy>)obj item:(GoodsItem *)item {
-    id<IPrintable> printInfo = [obj printInfo:item];
-    
-    if (printInfo) {
-        [self.outputor addBaseData:printInfo];
-    }
-    
-    if ([obj respondsToSelector:@selector(printExtraInfo:)]) {
-        id<IPrintable> extra = [obj printInfo:item];
-        if (extra) {
-            id <ISaleStrategy> s = (id<ISaleStrategy>)obj;
-            [self.outputor addExtraData:extra forType:[s strategyDescription]];
-        }
-    }
-}
-
-- (void)printTotalTailToString:(NSMutableString *)stringBuilder {
-    [stringBuilder appendString:[NSString stringWithFormat:@"总计：%.2f(元)\n", self.total]];
-    
+- (void)writeTicketEnd {
+    [self.outputor writeString:[NSString stringWithFormat:@"总计：%.2f(元)\n", self.total]];
     if (self.saveTotal > 0) {
-        [stringBuilder appendString:[NSString stringWithFormat:@"节省：%.2f(元)\n", self.saveTotal]];
+        [self.outputor writeString:[NSString stringWithFormat:@"节省：%.2f(元)\n", self.saveTotal]];
     }
-    [stringBuilder appendString:@"***********************\n"];
+    
+    [self.outputor writeString:@"***********************\n"];
 }
 
 
