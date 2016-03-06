@@ -14,6 +14,7 @@
 
 @interface TicketOutputor : NSObject
 
+- (instancetype)initWithOutput:(id)output;
 /**
  *  打印所有的
  */

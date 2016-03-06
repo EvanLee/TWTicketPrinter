@@ -8,14 +8,17 @@
 
 #import "SaleNormal.h"
 #import "GoodsItem.h"
+#import "NormalPrinter.h"
+
+@interface SaleNormal ()
+@end
 
 @implementation SaleNormal
 
 #pragma mark - Instance LifeCycle
 
 - (instancetype)initWithDict:(NSDictionary *)dict {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         
     }
     
@@ -26,11 +29,17 @@
 #pragma mark - ISaleStrategy Implement
 
 - (void)calcResultsForData:(GoodsItem *)data {
+    
     NSUInteger number = data.count;
     CGFloat price     = data.price;
     
     data.totalPrice  = number * price;
     data.savePrice   = 0;
 }
+
+- (id<IPrintable>)printInfo:(GoodsItem *)data {
+    return [[NormalPrinter alloc] initWithTarget:data];
+}
+
 
 @end

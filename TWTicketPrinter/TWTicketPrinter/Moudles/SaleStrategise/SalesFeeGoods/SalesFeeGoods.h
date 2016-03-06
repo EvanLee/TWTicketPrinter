@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ISaleStrategy.h"
+#import "IPrintStrategy.h"
 
-@interface SalesFeeGoods : NSObject <ISaleStrategy>
+@interface SalesFeeGoods : NSObject <ISaleStrategy, IPrintStrategy>
 
 @property (nonatomic, assign, readonly) NSUInteger needsNumber;
 @property (nonatomic, assign, readonly) NSUInteger feeNumber;

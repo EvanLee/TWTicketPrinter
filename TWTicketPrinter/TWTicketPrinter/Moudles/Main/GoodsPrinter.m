@@ -71,16 +71,16 @@ NSDictionary *goodsInfoMap;
 
 - (void)processList {
     for (GoodsItem *item in self.goodsItemList) {
-        [self processForItem:item];
+        [self getResultsForItem:item];
     }
 }
 
-- (void)processForItem:(GoodsItem *)item {
+- (void)getResultsForItem:(GoodsItem *)item {
     id<ISaleStrategy> calculator = [self.salefactory createInstanceForObject:item];
     [calculator calcResultsForData:item];
     
-    self.total     += 0;
-    self.saveTotal += 0.f;
+    self.total     += item.totalPrice;
+    self.saveTotal += item.savePrice;
     
     [self.outputor add:item];
 }

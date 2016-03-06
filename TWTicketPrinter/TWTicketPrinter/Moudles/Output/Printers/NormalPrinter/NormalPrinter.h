@@ -1,5 +1,5 @@
 //
-//  SaleNormal.h
+//  NormalPrinter.h
 //  TWTicketPrinter
 //
 //  Created by Evan on 16/3/6.
@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ISaleStrategy.h"
-#import "IPrintStrategy.h"
+#import "IPrintable.h"
 
-@interface SaleNormal : NSObject <ISaleStrategy, IPrintStrategy>
+@interface NormalPrinter : NSObject<IPrintable>
+
+- (instancetype)initWithTarget:(id)obj;
 
 @end

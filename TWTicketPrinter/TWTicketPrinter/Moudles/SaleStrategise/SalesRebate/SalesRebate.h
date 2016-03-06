@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "ISaleStrategy.h"
+#import "IPrintStrategy.h"
 
-@interface SalesRebate : NSObject <ISaleStrategy>
+@interface SalesRebate : NSObject <ISaleStrategy, IPrintStrategy>
 
 @property (nonatomic, assign, readonly) CGFloat rebate;
 

@@ -9,6 +9,7 @@
 #import "SalesRebate.h"
 #import "ELCocoaExts.h"
 #import "GoodsItem.h"
+#import "GoodsRebatePrinter.h"
 
 NSString * const Sales_Rebate_Key = @"Rebate";
 
@@ -53,6 +54,10 @@ NSString * const Sales_Rebate_Key = @"Rebate";
 
     data.totalPrice  = total * discount;
     data.savePrice   = total - data.totalPrice;
+}
+
+- (id<IPrintable>)printInfo:(GoodsItem *)data {
+    return [[GoodsRebatePrinter alloc] initWithTarget:data];
 }
 
 @end

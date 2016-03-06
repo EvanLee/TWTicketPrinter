@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "ISaleStrategy.h"
+#import "IPrintStrategy.h"
 
 /**
  *  策略类的，代理模式。 这是个标准代理，所以必须 和被代理者继承相同的接口。
  */
-@interface StrategyProxy : NSObject <ISaleStrategy>
+@interface StrategyProxy : NSObject <ISaleStrategy, IPrintStrategy>
 
 + (instancetype)instanceWithTarget:(id)target;
 

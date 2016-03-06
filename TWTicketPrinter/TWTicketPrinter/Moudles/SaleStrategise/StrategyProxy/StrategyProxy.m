@@ -24,12 +24,27 @@
     return proxy;
 }
 
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    if (self = [super init]) {
+        
+    }
+    
+    return self;
+}
+
+
 #pragma mark - SuperClass Override Methods
 
 - (void)calcResultsForData:(id)data {
     for (id<ISaleStrategy> strategy in self.strategise) {
         [strategy calcResultsForData:data];
     }
+}
+
+#pragma mark - IPrintStrategy Impl
+- (id<IPrintable>)printInfo:(id)data {
+#warning Not Implment
+    return nil;
 }
 
 @end

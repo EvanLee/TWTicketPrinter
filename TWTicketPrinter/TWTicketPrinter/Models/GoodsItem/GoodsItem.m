@@ -42,6 +42,15 @@
     return self.info.barCode;
 }
 
+- (NSString *)unitsName {
+    return self.info.unitsName;
+}
+
+- (NSString *)goodsName {
+    return self.info.goodsName;
+}
+
+
 - (CGFloat)price {
     return self.info.price;
 }

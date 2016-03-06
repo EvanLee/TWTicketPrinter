@@ -9,6 +9,9 @@
 #import "SalesFeeGoods.h"
 #import "ELCocoaExts.h"
 #import "GoodsItem.h"
+#import "GoodsFeePrinter.h"
+#import "IPrintable.h"
+#import "GoodsFeeExtraPrinter.h"
 
 NSString *const Sales_FeeGoods_NeedsKey = @"BuyNum";
 NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
@@ -67,6 +70,21 @@ NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
     
     data.totalPrice  = payCount * price;
     data.savePrice   = feeCount * price;
+}
+
+- (id<IPrintable>)printInfo:(GoodsItem *)data {
+    return [[GoodsFeePrinter alloc] initWithTarget:data];
+}
+
+- (id<IPrintable>)printExtraInfo:(GoodsItem *)data {
+    NSUInteger number = data.count;
+    NSUInteger tmp = self.needsNumber + self.feeNumber;
+    NSUInteger payCount = (number / tmp) * self.needsNumber + number % tmp;
+    
+    GoodsItem *newItem = [GoodsItem new];
+    [newItem addWithCount:number - payCount];
+
+    return [[GoodsFeeExtraPrinter alloc] initWithTarget:data];
 }
 
 @end
