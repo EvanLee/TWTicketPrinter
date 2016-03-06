@@ -10,7 +10,7 @@
 #import "ELCocoaExts.h"
 #import "GoodsItem.h"
 
-NSString * const Sales_Rebate_Key = @"rebate";
+NSString * const Sales_Rebate_Key = @"Rebate";
 
 @interface SalesRebate ()
 

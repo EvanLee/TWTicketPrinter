@@ -15,7 +15,7 @@
 #import "SalesRebate.h"
 #import "SalesFeeGoods.h"
 
-SPEC_BEGIN(GoodsCalcSpec123)
+SPEC_BEGIN(GoodsCalcSpec)
 
 describe(@"StrategyTest", ^{
     

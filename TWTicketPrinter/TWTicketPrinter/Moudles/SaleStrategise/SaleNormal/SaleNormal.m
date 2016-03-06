@@ -11,6 +11,18 @@
 
 @implementation SaleNormal
 
+#pragma mark - Instance LifeCycle
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    self = [super init];
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
+
 #pragma mark - ISaleStrategy Implement
 
 - (void)calcResultsForData:(GoodsItem *)data {

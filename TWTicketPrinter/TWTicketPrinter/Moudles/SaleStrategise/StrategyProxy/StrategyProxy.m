@@ -10,7 +10,7 @@
 
 @interface StrategyProxy ()
 
-@property (nonatomic, strong) id strategy;
+@property (nonatomic, strong) id strategise;
 
 @end
 
@@ -20,14 +20,16 @@
 
 + (instancetype)instanceWithTarget:(id)target {
     StrategyProxy *proxy = [StrategyProxy new];
-    proxy.strategy = target;
+    proxy.strategise = target;
     return proxy;
 }
 
 #pragma mark - SuperClass Override Methods
 
 - (void)calcResultsForData:(id)data {
-    
+    for (id<ISaleStrategy> strategy in self.strategise) {
+        [strategy calcResultsForData:data];
+    }
 }
 
 @end

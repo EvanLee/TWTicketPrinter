@@ -10,8 +10,8 @@
 #import "ELCocoaExts.h"
 #import "GoodsItem.h"
 
-NSString *const Sales_FeeGoods_NeedsKey = @"Sales_FeeGoods_NeedsKey";
-NSString *const Sales_FeeGoods_FeeKey   = @"Sales_FeeGoods_FeeKey";
+NSString *const Sales_FeeGoods_NeedsKey = @"BuyNum";
+NSString *const Sales_FeeGoods_FeeKey   = @"FeeNum";
 
 @interface SalesFeeGoods ()
 @property (nonatomic, assign) NSUInteger needsNumber;

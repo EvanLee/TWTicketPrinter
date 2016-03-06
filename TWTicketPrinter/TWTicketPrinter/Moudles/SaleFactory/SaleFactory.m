@@ -12,11 +12,11 @@
 #import "SaleNormal.h"
 #import "StrategyProxy.h"
 
-NSDictionary *g_strategyMap;
+NSDictionary *g_strategyCache;    //存放所有的strategy 的缓存 即：NSDictionary<strategyName, strategyInstances>
+NSDictionary *g_goodsStrategyMap; //商品和他对应要用到的策略类,即:NSDictionary<barcode, list<strategyInstances>>
 
 @interface SaleFactory ()
 
-@property (nonatomic, strong) NSArray *strategies;
 @property (nonatomic, strong) id<ISaleFactory> factoryProxy;
 
 @end
@@ -27,7 +27,7 @@ NSDictionary *g_strategyMap;
 
 + (void)initialize {
     if (self == [SaleFactory class]) {
-        [self loadMap];
+        [self configureMaps];
     }
 }
 
@@ -35,7 +35,7 @@ NSDictionary *g_strategyMap;
 
 - (id<ISaleStrategy>)createInstanceForObject:(GoodsItem *)item {
     NSString *barCode   = [item barCode];
-    NSArray *strategies = [g_strategyMap objectForKey:barCode]; //同一个商品会有多种优惠
+    NSArray *strategies = [g_goodsStrategyMap objectForKey:barCode]; //同一个商品会有多种优惠
 
     if (strategies || strategies.count ) {
         return [SaleNormal new];
@@ -54,33 +54,68 @@ NSDictionary *g_strategyMap;
 
 #pragma mark - Private Methods
 
-+ (void)loadMap {
-    #warning - 从数从本地读取的方法需要重构
-    NSString *urlPath        = [[NSBundle mainBundle] pathForResource:@"SaleStategies" ofType:@"plist"];
-    NSArray *array           = [NSArray arrayWithContentsOfFile:urlPath];
-    NSMutableDictionary *map = [NSMutableDictionary dictionary];
+/**
+ *  将策略信息从内存文件中读出来， 并转化为2个map
+ */
++ (void)configureMaps {
+    NSString *urlPath  = [[NSBundle mainBundle] pathForResource:@"SaleStrategies.plist" ofType:nil];
+    NSArray *array     = [NSArray arrayWithContentsOfFile:urlPath];
+
+    g_goodsStrategyMap = [NSMutableDictionary dictionary];
+    g_strategyCache    = [NSMutableDictionary dictionary];
     
     for (NSDictionary *dic in array) {
        SaleStrategy *strategy = [[SaleStrategy alloc] initWithDictionary:dic error:nil];
 
-        NSArray<NSString *> *products = strategy.products;
-        for (NSString *barCode in products) {
-            [self configureMap:map forBarCode:barCode];
+        if (strategy) {
+            NSArray<NSString *> *products = strategy.products;
+            
+            //分类，生成 g_goodsStrategyMap
+            for (NSString *barCode in products) {
+                [self configureGoodsStrategyMap:(NSMutableDictionary *)g_goodsStrategyMap
+                                     forBarCode:barCode
+                                   saleStrategy:strategy];
+            }
         }
     }
-    
-    g_strategyMap = map;
 }
 
-+ (void)configureMap:(NSMutableDictionary *)map forBarCode:(NSString *)barCode {
++ (void)configureGoodsStrategyMap:(NSMutableDictionary *)map
+                       forBarCode:(NSString *)barCode
+                     saleStrategy:(SaleStrategy *)info {
     NSMutableArray *strategys = [map objectForKey:barCode];
     
-    if (!strategys) {
+    if (!strategys) { //添加商品到map
         strategys = [NSMutableArray array];
         [map setValue:strategys forKey:barCode];
     }
+
+    //从缓存中读取/构造，策略对象
+    id<ISaleStrategy> sales = [self strategyFromCache:info];
     
-    [strategys addObject:@(1)];
+    if (sales) {   //添加商品策略到list中
+        [strategys addObject:sales];
+    }
+}
+
++ (id<ISaleStrategy>)strategyFromCache:(SaleStrategy *)strategyInfo {
+    NSCParameterAssert(strategyInfo.className);
+    
+    NSString *className = strategyInfo.className;
+    id<ISaleStrategy> s = [g_strategyCache objectForKey:className];
+    
+    if (!s) {//反射创建对象
+        Class cls = NSClassFromString(className);
+        
+        if (cls != Nil) {
+            s = [[cls alloc] initWithDict:strategyInfo.paramters];
+            [g_strategyCache setValue:s forKey:className];
+        } else {
+            NSLog(@"--找不到类:%@ ", className);
+        }
+    }
+    
+    return s;
 }
 
 

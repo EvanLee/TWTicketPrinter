@@ -13,4 +13,7 @@
 @required
 - (void)calcResultsForData:(id)data;
 
+@optional
+- (instancetype)initWithDict:(NSDictionary *)dict;
+
 @end

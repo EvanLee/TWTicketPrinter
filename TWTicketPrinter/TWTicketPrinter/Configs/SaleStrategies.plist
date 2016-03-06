@@ -3,34 +3,34 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>classname</key>
-		<string>SaleFeeGoods</string>
-		<key>salename</key>
+		<key>ClassName</key>
+		<string>SalesFeeGoods</string>
+		<key>SaleName</key>
 		<string>买二送一</string>
-		<key>paramters</key>
+		<key>Paramters</key>
 		<dict>
 			<key>BuyNum</key>
 			<integer>2</integer>
 			<key>FeeNum</key>
 			<string>1</string>
 		</dict>
-		<key>products</key>
+		<key>Products</key>
 		<array>
 			<string>ITEM000005</string>
 			<string>ITEM000001</string>
 		</array>
 	</dict>
 	<dict>
-		<key>classname</key>
-		<string>SaleRebate</string>
-		<key>salename</key>
+		<key>ClassName</key>
+		<string>SalesRebate</string>
+		<key>SaleName</key>
 		<string>九折优惠</string>
-        <key>paramters</key>
+        <key>Paramters</key>
         <dict>
-            <key>rebate</key>
+            <key>Rebate</key>
             <integer>9</integer>
         </dict>
-		<key>products</key>
+		<key>Products</key>
 		<array>
 			<string>ITEM000005</string>
 			<string>ITEM000001</string>

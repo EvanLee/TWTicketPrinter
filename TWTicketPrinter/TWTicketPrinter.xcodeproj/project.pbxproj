@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689691C8C196500068621 /* SaleFactorySpec.m */; };
 		20DDE47F1C8A7A6A009BEA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE47D1C8A7A6A009BEA75 /* Main.storyboard */; };
 		20DDE4811C8A7A6B009BEA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4801C8A7A6B009BEA75 /* Assets.xcassets */; };
 		20DDE4841C8A7A6B009BEA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4821C8A7A6B009BEA75 /* LaunchScreen.storyboard */; };
-		20DDE48F1C8A7A6B009BEA75 /* TWTicketPrinterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE48E1C8A7A6B009BEA75 /* TWTicketPrinterTests.m */; };
 		20DDE4A31C8A7B20009BEA75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE49B1C8A7B20009BEA75 /* AppDelegate.m */; };
 		20DDE4A41C8A7B20009BEA75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE49C1C8A7B20009BEA75 /* main.m */; };
 		20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4A21C8A7B20009BEA75 /* ViewController.m */; };
@@ -50,13 +50,13 @@
 
 /* Begin PBXFileReference section */
 		0703FD3084CA31B04430046B /* libPods-TWTicketPrinter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWTicketPrinter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		209689691C8C196500068621 /* SaleFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactorySpec.m; sourceTree = "<group>"; };
 		20DDE4711C8A7A6A009BEA75 /* TWTicketPrinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTicketPrinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DDE47E1C8A7A6A009BEA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20DDE4801C8A7A6B009BEA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		20DDE4831C8A7A6B009BEA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20DDE4851C8A7A6B009BEA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		20DDE48A1C8A7A6B009BEA75 /* TWTicketPrinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWTicketPrinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20DDE48E1C8A7A6B009BEA75 /* TWTicketPrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTicketPrinterTests.m; sourceTree = "<group>"; };
 		20DDE4901C8A7A6B009BEA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20DDE49A1C8A7B20009BEA75 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20DDE49B1C8A7B20009BEA75 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		209689681C8C194100068621 /* SaleFactorySepc */ = {
+			isa = PBXGroup;
+			children = (
+				209689691C8C196500068621 /* SaleFactorySpec.m */,
+			);
+			path = SaleFactorySepc;
+			sourceTree = "<group>";
+		};
 		20DDE4681C8A7A6A009BEA75 = {
 			isa = PBXGroup;
 			children = (
@@ -161,9 +169,9 @@
 		20DDE48D1C8A7A6B009BEA75 /* TWTicketPrinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				209689681C8C194100068621 /* SaleFactorySepc */,
 				20DDE4E91C8B2729009BEA75 /* GoodsCalculator */,
 				20DDE4CB1C8A9E96009BEA75 /* GoodsParser */,
-				20DDE48E1C8A7A6B009BEA75 /* TWTicketPrinterTests.m */,
 				20DDE4901C8A7A6B009BEA75 /* Info.plist */,
 			);
 			path = TWTicketPrinterTests;
@@ -623,10 +631,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */,
 				20DDE4EB1C8B2740009BEA75 /* GoodCalcSpec.m in Sources */,
 				20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */,
 				20DDE4E21C8AD5CA009BEA75 /* GoodsItem.m in Sources */,
-				20DDE48F1C8A7A6B009BEA75 /* TWTicketPrinterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
