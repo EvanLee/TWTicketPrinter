@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20061E4A1C8C781B004DFADC /* SaleNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4F51C8BC6D7009BEA75 /* SaleNormal.m */; };
+		20061E4B1C8C781B004DFADC /* SalesRebate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */; };
+		20061E4C1C8C781B004DFADC /* SalesFeeGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */; };
+		20061E4D1C8C7822004DFADC /* SaleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4C91C8A903A009BEA75 /* SaleFactory.m */; };
+		20061E4E1C8C7845004DFADC /* TicketPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047332A1C8C644900840998 /* TicketPrinter.m */; };
 		204733281C8C63A500840998 /* TicketPrinterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 204733271C8C63A500840998 /* TicketPrinterSpec.m */; };
 		2047332B1C8C644900840998 /* TicketPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047332A1C8C644900840998 /* TicketPrinter.m */; };
 		2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 209689691C8C196500068621 /* SaleFactorySpec.m */; };
@@ -630,9 +635,14 @@
 			files = (
 				2096896A1C8C196500068621 /* SaleFactorySpec.m in Sources */,
 				20DDE4EB1C8B2740009BEA75 /* GoodCalcSpec.m in Sources */,
+				20061E4E1C8C7845004DFADC /* TicketPrinter.m in Sources */,
+				20061E4B1C8C781B004DFADC /* SalesRebate.m in Sources */,
+				20061E4D1C8C7822004DFADC /* SaleFactory.m in Sources */,
 				204733281C8C63A500840998 /* TicketPrinterSpec.m in Sources */,
 				20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */,
 				20DDE4E21C8AD5CA009BEA75 /* GoodsItem.m in Sources */,
+				20061E4C1C8C781B004DFADC /* SalesFeeGoods.m in Sources */,
+				20061E4A1C8C781B004DFADC /* SaleNormal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
