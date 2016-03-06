@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DqP-o8-gDl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="点击打印按钮" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-QJ-CtX">
+                                <rect key="frame" x="20" y="128" width="560" height="462"/>
+                                <color key="backgroundColor" red="0.54546600827844693" green="0.61696171606052763" blue="0.9289606592238171" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I8m-dz-lOE">
+                                <rect key="frame" x="20" y="80" width="560" height="29"/>
+                                <segments>
+                                    <segment title="二送一"/>
+                                    <segment title="九折"/>
+                                    <segment title="九折&amp;二送一"/>
+                                    <segment title="无优惠"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84841744087837834" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CJG-QJ-CtX" secondAttribute="bottom" constant="10" id="3Lr-kD-hlF"/>
+                            <constraint firstItem="I8m-dz-lOE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3SE-xd-0k2"/>
+                            <constraint firstItem="I8m-dz-lOE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="8E7-o9-ASn"/>
+                            <constraint firstItem="CJG-QJ-CtX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FHS-UF-iGg"/>
+                            <constraint firstItem="CJG-QJ-CtX" firstAttribute="top" secondItem="I8m-dz-lOE" secondAttribute="bottom" constant="20" id="HLx-HB-pQr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I8m-dz-lOE" secondAttribute="trailing" id="Mr0-VS-R2Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CJG-QJ-CtX" secondAttribute="trailing" id="Ywm-jj-Ii7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Nao-OM-Uba">
+                        <barButtonItem key="rightBarButtonItem" title="打印" id="QUx-cc-NZT"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="printBtn" destination="QUx-cc-NZT" id="9RX-hc-Nwz"/>
+                        <outlet property="resultsTextV" destination="CJG-QJ-CtX" id="tt9-WV-PJ3"/>
+                        <outlet property="typeSeg" destination="I8m-dz-lOE" id="NQI-q2-MJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="983" y="598"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dsc-Zh-H4w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DqP-o8-gDl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ien-IB-pUa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9vh-Dj-BBI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7A-J5-Mus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="598"/>
         </scene>
     </scenes>
 </document>

@@ -24,8 +24,8 @@
 @property (nonatomic, strong) id<ISaleStrategy> saleCalculator;
 @property (nonatomic, strong) id<IDataParser>   inputParser;
 
-@property (nonatomic, strong) SaleFactory    *salefactory;
-@property (nonatomic, strong) OutputBuilder *outputor;
+@property (nonatomic, strong) SaleFactory    *saleFactory;
+@property (nonatomic, strong) OutputBuilder  *outputor;
 @property (nonatomic, strong) NSArray        *goodsItemList;
 
 @end
@@ -40,7 +40,6 @@
     dispatch_once(&onceToken, ^{
         printer = [TicketPrinter new];
         printer.inputParser = [BarCodeParser new];
-        printer.salefactory = [SaleFactory new];
         printer.outputor    = [OutputBuilder new];
     });
     
@@ -51,6 +50,7 @@
 
 - (NSString *)printTicketWithFileName:(NSString *)inputFileName {
     //解析
+    self.saveTotal = self.total = 0.f;
     [self.inputParser parse:inputFileName error:nil];
     self.goodsItemList = [self.inputParser getResults];
     
@@ -74,7 +74,7 @@
 }
 
 - (void)getResultsForItem:(GoodsItem *)item {
-    id<ISaleStrategy> calculator = [self.salefactory createInstanceForObject:item];
+    id<ISaleStrategy> calculator = [self.saleFactory createInstanceForObject:item];
     [calculator calcResultsForData:item];
     
     self.total     += item.totalPrice;
@@ -95,5 +95,15 @@
     [self.outputor writeString:@"***********************\n"];
 }
 
+
+#pragma mark - Getters & Setters
+
+- (SaleFactory *)saleFactory {
+    if (!_saleFactory) {
+        _saleFactory  = [[SaleFactory alloc] initWithFileName:@"SaleStrategies.plist"];
+    }
+    
+    return _saleFactory;
+}
 
 @end

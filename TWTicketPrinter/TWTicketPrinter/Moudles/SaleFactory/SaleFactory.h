@@ -16,4 +16,6 @@
 
 @interface SaleFactory : NSObject <ISaleFactory>
 
+- (instancetype)initWithFileName:(NSString *)strategyFileName;
+
 @end

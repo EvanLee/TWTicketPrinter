@@ -12,7 +12,11 @@
  *  小票打印类，外观模式
  */
 
+@class SaleFactory;
+
 @interface TicketPrinter : NSObject
+
+@property (nonatomic, strong, readonly) SaleFactory *saleFactory;
 
 + (instancetype)defaultPrinter;
 

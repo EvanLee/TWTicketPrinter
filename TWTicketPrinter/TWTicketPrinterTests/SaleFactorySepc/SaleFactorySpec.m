@@ -14,7 +14,7 @@ SPEC_BEGIN (SaleFactorySpec)
 describe(@"SaleFactorySpec", ^{
     
     context(@"Give a Facotry", ^{
-        SaleFactory *factory = [SaleFactory new];
+        SaleFactory *factory = [[SaleFactory alloc] initWithFileName:@"SaleStrategies.plist"];
         
         it(@"Should be pass testiing", ^{
             [[factory shouldNot] beNil];
