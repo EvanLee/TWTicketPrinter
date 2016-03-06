@@ -27,7 +27,7 @@
 		20DDE4CD1C8A9EAE009BEA75 /* GoodsItemParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */; };
 		20DDE4CE1C8AACCA009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
 		20DDE4CF1C8AACCB009BEA75 /* CodeInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 20DDE4A91C8A8318009BEA75 /* CodeInput.json */; };
-		20DDE4D31C8AC1BE009BEA75 /* TicketOutputor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */; };
+		20DDE4D31C8AC1BE009BEA75 /* OutputBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D21C8AC1BE009BEA75 /* OutputBuilder.m */; };
 		20DDE4D81C8AC82F009BEA75 /* SalesRebate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */; };
 		20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4DA1C8AC843009BEA75 /* SalesFeeGoods.m */; };
 		20DDE4DF1C8ACB7F009BEA75 /* BarCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDE4DE1C8ACB7F009BEA75 /* BarCodeParser.m */; };
@@ -91,8 +91,8 @@
 		20DDE4C81C8A903A009BEA75 /* SaleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleFactory.h; sourceTree = "<group>"; };
 		20DDE4C91C8A903A009BEA75 /* SaleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleFactory.m; sourceTree = "<group>"; };
 		20DDE4CC1C8A9EAE009BEA75 /* GoodsItemParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsItemParserSpec.m; sourceTree = "<group>"; };
-		20DDE4D11C8AC1BE009BEA75 /* TicketOutputor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicketOutputor.h; path = ../TicketOutputor.h; sourceTree = "<group>"; };
-		20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicketOutputor.m; path = ../TicketOutputor.m; sourceTree = "<group>"; };
+		20DDE4D11C8AC1BE009BEA75 /* OutputBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputBuilder.h; sourceTree = "<group>"; };
+		20DDE4D21C8AC1BE009BEA75 /* OutputBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputBuilder.m; sourceTree = "<group>"; };
 		20DDE4D61C8AC82F009BEA75 /* SalesRebate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesRebate.h; sourceTree = "<group>"; };
 		20DDE4D71C8AC82F009BEA75 /* SalesRebate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesRebate.m; sourceTree = "<group>"; };
 		20DDE4D91C8AC843009BEA75 /* SalesFeeGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesFeeGoods.h; sourceTree = "<group>"; };
@@ -152,8 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				209689751C8C2E7800068621 /* IPrintable.h */,
-				20DDE4D11C8AC1BE009BEA75 /* TicketOutputor.h */,
-				20DDE4D21C8AC1BE009BEA75 /* TicketOutputor.m */,
 				209689791C8C32A800068621 /* GoodFeeExtraPrinter */,
 				209689701C8C2C7A00068621 /* GoodsFeePrinter */,
 				209689741C8C2E5200068621 /* GoodsRebatePrinter */,
@@ -360,6 +358,8 @@
 		20DDE4D01C8AC198009BEA75 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				20DDE4D11C8AC1BE009BEA75 /* OutputBuilder.h */,
+				20DDE4D21C8AC1BE009BEA75 /* OutputBuilder.m */,
 				2096896B1C8C25BB00068621 /* Printers */,
 			);
 			path = Output;
@@ -685,7 +685,7 @@
 				20DDE4B21C8A8562009BEA75 /* GoodsInfo.m in Sources */,
 				20DDE4A51C8A7B20009BEA75 /* ViewController.m in Sources */,
 				20DDE4DB1C8AC843009BEA75 /* SalesFeeGoods.m in Sources */,
-				20DDE4D31C8AC1BE009BEA75 /* TicketOutputor.m in Sources */,
+				20DDE4D31C8AC1BE009BEA75 /* OutputBuilder.m in Sources */,
 				20DDE4FF1C8BD65C009BEA75 /* StrategyProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
